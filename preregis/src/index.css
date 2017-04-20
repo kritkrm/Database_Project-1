@@ -11,9 +11,19 @@ body {
    .jumbotron {
        background-color: #FFFFFF; /* Orange */
        color: #111111;
+   }e
+   #myNavbar> ul >li >a{
+       color: gray;
+
+
    }
    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-   .row.content {height: 975px;}
+   .row.content {
+       height: 975px;
+       background-color: pink;
+       /*width: 1300px;
+       float: left;*/
+    }
 
    /* Set gray background color and 100% height */
    .sidenav {
@@ -38,7 +48,7 @@ body {
    }
    .col-sm-1 {
        padding: 0px;
-       height: 50px;
+       height: 25px;
        align-content: left;
    }
    .col-sm-2 {

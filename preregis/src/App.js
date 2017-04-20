@@ -16,15 +16,23 @@ class App extends Component {
       </button>
 
     </div>
+
     <div className="collapse navbar-collapse" id="myNavbar">
       <ul className="nav navbar-nav">
       </ul>
-      <ul className="nav navbar-nav navbar-right">
+
+      <ul className="nav navbar-nav navbar-left">
         <li><a href="#">Chulalongkorn University</a></li>
       </ul>
+
+      <ul className="nav navbar-nav navbar-right">
+        <li><a href="#">FM & FOCUS ▼</a></li> 
+      </ul>
+
     </div>
+
   </div>
-</nav>
+        </nav>
 
 <div className="container-fluid text-center">
   <div className="row content">
@@ -33,9 +41,10 @@ class App extends Component {
     <div className="col-sm-8 text-left">
         <div className="jumbotron text-center">
               <h1>CU Pre-Regis</h1>
-              <hr/><hr/>
+              <hr/>
 
-              <div className="row">
+
+              <div className="row" class="linetable">
                   <div className="col-sm-2"></div>
                   <div className="col-sm-1"><p>8</p></div>
                   <div className="col-sm-1"><p>9</p></div>
@@ -48,6 +57,7 @@ class App extends Component {
                   <div className="col-sm-1"><p>16</p></div>
                   <div className="col-sm-1"><p></p></div>
               </div>
+              <hr/>
                   <div className="row">
                       <div className="col-sm-2"><p>Monday</p></div>
                       <div className="col-sm-2"><p id="rcorners1">Calculus I</p></div>
