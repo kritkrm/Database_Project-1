@@ -128,6 +128,10 @@ class App extends Component {
               </div>
         </div>
     </div>
+    <div className="col-sm-4 text-right">
+       <p>ff</p>;
+    </div>
+
   </div>
 </div>
 
