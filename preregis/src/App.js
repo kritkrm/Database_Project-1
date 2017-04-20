@@ -26,7 +26,7 @@ class App extends Component {
       </ul>
 
       <ul className="nav navbar-nav navbar-right">
-        <li><a href="#">FM & FOCUS ▼</a></li> 
+        <li><a href="#">FM & FOCUS KUY ▼</a></li> 
       </ul>
 
     </div>
