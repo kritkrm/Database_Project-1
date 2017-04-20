@@ -13,6 +13,21 @@ body {
        color: #111111;
        padding: 30px;
    }
+   .courselist {
+       background-color: #FFFFFF;
+
+   }
+
+   .search {
+        font-style: italic;
+        border: 0.1px solid lightgray;
+        padding: 0px;
+        height: 20px;
+        text-align: left;
+   }
+
+
+
    #myNavbar> ul >li >a,p{
        color: gray;
        padding-top: 15px;

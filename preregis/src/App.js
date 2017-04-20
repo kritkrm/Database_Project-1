@@ -39,7 +39,7 @@ class App extends Component {
   <br/>
     <div className="col-sm-8 text-left">
         <div className="jumbotron text-center">
-              <h1>CU Schedule</h1>
+              <h1>CU Pre-regis</h1>
               <div className="row" >
                   <div className="col-sm-2"></div>
                   <div className="col-sm-1"><p>8</p></div>
@@ -128,8 +128,13 @@ class App extends Component {
               </div>
         </div>
     </div>
-    <div className="col-sm-4 text-right">
-       <p>ff</p>;
+    <div className="col-sm-4 text-center">
+       <div className="jumbotron">
+       <h3>List of course</h3>
+       <hr/>
+       <p className="search">8.00-16.00</p>
+       
+       </div>
     </div>
 
   </div>
