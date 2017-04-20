@@ -40,6 +40,7 @@ class App extends Component {
     </div>
     <div className="col-sm-8 text-left">
         <div className="jumbotron text-center">
+              <h1>focus FM</h1>
               <h1>CU Pre-Regis</h1>
               <hr/>
 
