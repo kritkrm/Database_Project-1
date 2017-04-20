@@ -22,7 +22,7 @@ class App extends Component {
       </ul>
 
       <ul className="nav navbar-nav navbar-left">
-        <li><a href="#">Chulalongkorn University</a></li>
+        <li><p>Chulalongkorn University</p></li>
       </ul>
 
       <ul className="nav navbar-nav navbar-right">
@@ -36,16 +36,11 @@ class App extends Component {
 
 <div className="container-fluid text-center">
   <div className="row content">
-    <div className="col-sm-2 sidenav">
-    </div>
+  <br/>
     <div className="col-sm-8 text-left">
         <div className="jumbotron text-center">
-              <h1>focus FM</h1>
-              <h1>CU Pre-Regis</h1>
-              <hr/>
-
-
-              <div className="row" class="linetable">
+              <h1>CU Schedule</h1>
+              <div className="row" >
                   <div className="col-sm-2"></div>
                   <div className="col-sm-1"><p>8</p></div>
                   <div className="col-sm-1"><p>9</p></div>
@@ -59,76 +54,79 @@ class App extends Component {
                   <div className="col-sm-1"><p></p></div>
               </div>
               <hr/>
-                  <div className="row">
-                      <div className="col-sm-2"><p>Monday</p></div>
-                      <div className="col-sm-2"><p id="rcorners1">Calculus I</p></div>
+              
+              
 
-                      <div className="col-sm-2"><p id="rcorners2">Gen Phy I</p></div>
+              <div className="row">
+                  <div className="col-sm-2"><p>Monday</p></div>
+                  <div className="col-sm-2"><p id="rcorners1">Calculus I</p></div>
 
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                    </div>
-                      <div className="row">
-                          <div className="col-sm-2"><p>Tuesday</p></div>
+                  <div className="col-sm-2"><p id="rcorners1">Gen Phy I</p></div>
 
-                          <div className="col-sm-2"><p id="rcorners1">Comp Prog</p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                      </div>
-                      <div className="row">
-                          <div className="col-sm-2"><p>Wednesday</p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                      </div>
-                      <div className="row">
-                          <div className="col-sm-2"><p>Thursday</p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                      </div>
-                      <div className="row">
-                          <div className="col-sm-2"><p>Friday</p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                          <div className="col-sm-1"><p> </p></div>
-                      </div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+              </div>
+              <div className="row">
+                  <div className="col-sm-2"><p>Tuesday</p></div>
+
+                  <div className="col-sm-2"><p id="rcorners1">Comp Prog</p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+              </div>
+                      
+              <div className="row">
+                  <div className="col-sm-2"><p>Wednesday</p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+              </div>
+
+              <div className="row">
+                  <div className="col-sm-2"><p>Thursday</p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+              </div>
+
+              <div className="row">
+                  <div className="col-sm-2"><p>Friday</p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+                  <div className="col-sm-1"><p> </p></div>
+              </div>
         </div>
-    </div>
-    <div className="col-sm-2 sidenav">
-
     </div>
   </div>
 </div>

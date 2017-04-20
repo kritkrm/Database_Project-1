@@ -11,61 +11,69 @@ body {
    .jumbotron {
        background-color: #FFFFFF; /* Orange */
        color: #111111;
-   }e
-   #myNavbar> ul >li >a{
+       
+   }
+   #myNavbar> ul >li >a,p{
        color: gray;
-
-
+       padding-top: 15px;
    }
    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
    .row.content {
        height: 975px;
        background-color: pink;
-       /*width: 1300px;
-       float: left;*/
+
     }
 
    /* Set gray background color and 100% height */
    .sidenav {
-     padding-top: 20px;
+     position: 
+     /*padding-top: 20px;
      background-color: #f1f1f1;
-     height: 100%;
+     height: 100%;*/
    }
+
    /* Set black background color, white text and some padding */
    footer {
      background-color: #555;
      color: white;
      padding: 15px;
    }
-   #rcorners1 {
-       color: #FFFFFF;
-       border-radius: 25px;
-       background: #73AD21;
-       padding: 10px;
-       width: 100%;
-       height: 100%;
-       box-shadow: 5px 5px 2.5px grey;
-   }
+
    .col-sm-1 {
        padding: 0px;
-       height: 25px;
-       align-content: left;
+       height: 30px;
+       /*align-content: left;*/
    }
    .col-sm-2 {
-       padding: 1px;
+       padding: 0px;
    }
-   #rcorners2 {
+   .row{
+      padding: 0px;
+   }
+
+   #rcorners1 {
+     color: #FFFFFF;
+     border-radius: 25px;
+     background: #73AD21;
+     padding: 10px;
+     width: 100%;
+     height: 100%;
+     box-shadow: 5px 5px 2.5px grey;
+   }
+
+   /*#rcorners2 {
        border-radius: 25px;
        color: #73AD21;
+       background-color: white;
        border: 3px solid #73AD21;
        padding: 8px;
        width: 100%;
        height: 100%;
        box-shadow: 5px 5px 2.5px grey;
-   }
+   }*/
    /* On small screens, set height to 'auto' for sidenav and grid */
    @media screen and (max-width: 767px) {
-     .sidenav {
+     .sidenav {s
        height: auto;
        padding: 15px;
      }
