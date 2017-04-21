@@ -24,6 +24,8 @@ body {
         padding: 0px;
         height: 20px;
         text-align: left;
+        font-size: 14px;
+        color: lightgray;
    }
 
 
@@ -41,8 +43,8 @@ body {
 
    /* Set gray background color and 100% height */
    .sidenav {
-     position: 
-     /*padding-top: 20px;
+     /*position: 
+     padding-top: 20px;
      background-color: #f1f1f1;
      height: 100%;*/
    }

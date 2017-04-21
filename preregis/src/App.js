@@ -128,11 +128,18 @@ class App extends Component {
               </div>
         </div>
     </div>
+
     <div className="col-sm-4 text-center">
        <div className="jumbotron">
+       
        <h3>List of course</h3>
        <hr/>
-       <p className="search">8.00-16.00</p>
+       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+       <div className="search" >
+           <span class="glyphicon glyphicon-time">8.00-16.00</span>
+       </div>
+
+       
        
        </div>
     </div>
