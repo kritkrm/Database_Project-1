@@ -34,9 +34,9 @@ class App extends Component {
   </div>
         </nav>
 
-<div className="container-fluid text-center">
-  <div className="row content">
-  <br/>
+<div className="row content">
+  <div className="text-center">
+
     <div className="col-sm-8 text-left">
         <div className="jumbotron text-center">
               <h1>CU Pre-regis</h1>
@@ -134,23 +134,44 @@ class App extends Component {
        
        <h3>List of course</h3>
        <hr/>
-       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-       <div className="search" >
-           <span class="glyphicon glyphicon-time">8.00-16.00</span>
+       <div className="container-fluid">
+       <div className="search searchtime" >
+          Time : 9.00
        </div>
 
+       <br/>
+
+       <div className="search">
+          Course NO. : 88888888
+       </div>
        
+       <br/>
        
+       <div className="search">
+          Course Name : Gen Phy II
+       </div>
+
+       <button className="searchbotton">
+       search
+       </button>
+       </div>
+      <br/>      
        </div>
     </div>
 
-  </div>
-</div>
+
+
+    </div>
+    </div>
+
+
+
 
 <footer className="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
       </div>
+
     );
   }
 }
