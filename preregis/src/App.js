@@ -134,28 +134,29 @@ class App extends Component {
        
        <h3>List of course</h3>
        <hr/>
-       <div className="container-fluid">
-       <div className="search searchtime" >
-          Time : 9.00
-       </div>
 
-       <br/>
+        <div className="container-fluid">
 
-       <div className="search">
-          Course NO. : 88888888
-       </div>
-       
-       <br/>
-       
-       <div className="search">
-          Course Name : Gen Phy II
-       </div>
+            <div className="search searchTime" >
+              Time : 9.00
+            </div>
 
-       <button className="searchbotton">
-       search
-       </button>
-       </div>
-      <br/>      
+            <div className="search searchNo">
+              Course NO. : 88888888
+            </div>
+      
+            <div className="search searchName">
+              Course Name : Gen Phy II
+            </div>
+        
+            <button className="searchbotton">
+              search
+            </button>
+
+            
+        </div>
+      <hr/>
+      
        </div>
     </div>
 
