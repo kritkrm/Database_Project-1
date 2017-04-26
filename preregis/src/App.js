@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div classNameName="App">
         <nav className="navbar navbar-inverse">
+
   <div className="container-fluid">
     <div className="navbar-header">
       <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -136,25 +137,31 @@ class App extends Component {
        <hr/>
 
         <div className="container-fluid">
-
-            <div className="search searchTime" >
-              Time : 9.00
-            </div>
-
-            <div className="search searchNo">
-              Course NO. : 88888888
-            </div>
-      
-            <div className="search searchName">
-              Course Name : Gen Phy II
-            </div>
+          
+          <div className="col-sm-3">
+          </div>
+          <input type="text" class="form-control" className="col-sm-6 search searchTime" placeholder="Time : 9.00" aria-describedby="basic-addon1">
+          </input>
+          
+          
+          <div className="col-sm-10">
+          </div>
+          <input type="text" class="form-control" className="col-sm-10 search searchNo" placeholder="Course NO. : 88888888" aria-describedby="basic-addon1">
+          </input>
+          
         
-            <button className="searchbotton">
-              search
-            </button>
+          <input type="text" class="form-control" className="col-sm-12 search searchName" placeholder="Course Name : Gen Phy II" aria-describedby="basic-addon1">
+          </input>
+          
+
+          <br/>
 
             
         </div>
+
+          <button className="searchbotton">
+             search
+          </button>
       <hr/>
       
        </div>

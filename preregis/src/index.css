@@ -19,7 +19,6 @@ body {
    .row.content {
        height: 975px;
        padding: 10px;
-
        background-color: lightgray;
     }
 
@@ -49,9 +48,6 @@ body {
    .col-sm-2 {
        padding: 0px;
    }
-
-
-
    .courselist {
        background-color: pink;/*#FFFFFF;*/
    }
@@ -64,9 +60,12 @@ body {
         height: 20px;
         text-align: left;
         font-size: 14px;
-        color: lightgray;
+        color: gray;
         display: inline-grid; 
         float: center;
+        background-size :15px ;
+        background-repeat: no-repeat;
+        background-position: left 4px center;
    }
 
    .searchbotton {
@@ -81,21 +80,15 @@ body {
 
    .searchTime {
         background-image: url("https://cdn2.iconfinder.com/data/icons/flat-web/512/716964-alarm-512.png");
-        background-size :15px ;
-        background-repeat: no-repeat;
-        background-position: left 4px center;
+        /*width: 140px;*/
    }
    .searchNo {
         background-image: url("https://cdn2.iconfinder.com/data/icons/flat-web/512/717007-tag-128.png");
-        background-size :15px ;
-        background-repeat: no-repeat;
-        background-position: left 4px center;
+        /*width: 220px;*/
    }
    .searchName {
         background-image: url("https://cdn2.iconfinder.com/data/icons/flat-web/512/716985-magnifier-128.png");
-        background-size :15px ;
-        background-repeat: no-repeat;
-        background-position: left 4px center;
+        /*width: 260px;*/
    }
 
    /* Set gray background color and 100% height */
