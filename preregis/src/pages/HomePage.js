@@ -3,7 +3,7 @@ import Table from '../container/table';
 import SearchPanel from '../container/search_panel';
 import NavBar from '../container/nav_bar';
 import Footer from '../container/footer';
-import '../App.css';
+
 
 class HomePage extends Component {
   render() {
