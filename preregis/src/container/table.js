@@ -69,7 +69,6 @@ class Table extends Component {
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
                       <SubjectBar period={3} name="FM" />
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
