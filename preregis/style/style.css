@@ -30,7 +30,7 @@ body {
        background-color: white;
     }
     .main-content {
-        width: 70%;
+        width: 80%;
         margin: auto;
     }
     /*white box*/
@@ -39,7 +39,7 @@ body {
        color: #111111;
        padding: 20px 30px 20px 30px;
        border : 1.5px dashed lightgray;
-       margin: 30px;
+       margin: auto;
    }
 
    #rcorners1 {
@@ -48,7 +48,7 @@ body {
      padding: 10px;
      font-size: 15px;
      text-align:center;
-     box-shadow: 5px 5px 2.5px grey;
+     box-shadow: 2.5px 2.5px 2.5px grey;
    }
 
    .col-sm-1 {
