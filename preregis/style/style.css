@@ -82,6 +82,10 @@ body {
        padding: 2px 10px 2px 10px;
    }
 
+   .input-group {
+       margin-bottom: 10px;
+   }
+
   /*icon time*/ 
    .searchTime {
         background-image: url("https://cdn2.iconfinder.com/data/icons/flat-web/512/716964-alarm-512.png");

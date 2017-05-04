@@ -8,20 +8,23 @@ class SearchPanel extends Component {
                     <h3>List of course</h3>
                     <hr/>
 
-                    <input type="text" className="form-control" className="col-sm-6 search searchTime" placeholder="Time : 9.00" aria-describedby="basic-addon1" />
-                    <div className="col-sm-12" />
-                    <input type="text" className="form-control" className="col-sm-8 search searchNo" placeholder="Course NO. : 88888888" aria-describedby="basic-addon1" />
-                    <input type="text" className="form-control" className="col-sm-12 search searchName" placeholder="Course Name : Gen Phy II" aria-describedby="basic-addon1" />
-
-                    
                     <form>
                         <div className="input-group">
-                            <span className="input-group-addon"><i className="glyphicon glyphicon-user"></i></span>
-                            <input id="email" type="text" className="form-control" name="email" placeholder="Email" />
+                            <span className="input-group-addon"><i className="glyphicon glyphicon-time"></i></span>
+                            <input type="text" className="form-control" name="email" placeholder="Time : 9.00" />
+                        </div>
+                    
+                        <div className="input-group">
+                            <span className="input-group-addon"><i className="glyphicon glyphicon-tag"></i></span>
+                            <input type="text" className="form-control" name="email" placeholder="Course NO. : 88888888" />
+                        </div>
+
+                        <div className="input-group">
+                            <span className="input-group-addon"><i className="glyphicon glyphicon-book"></i></span>
+                            <input type="text" className="form-control" name="email" placeholder="Course Name : Gen Phy II" />
                         </div>
                     </form>
-                
-                <br/>
+        
                 <button className="btn btn-primary" type="botton">search</button>
                 <hr/>
 
