@@ -32,11 +32,10 @@ body {
 
     /*white box*/
    .jumbotron {
-       display: block;
        background-color: #FFFFFF; /* white */
        color: #111111;
        padding: 20px 30px 20px 30px;
-       border : 1.3px dashed lightgray; 
+       border : 1.5px dashed lightgray; 
        margin: 30px;
    }
 
@@ -114,6 +113,18 @@ body {
        background-color: lightgray;
        border: 1px solid lightgray;
        height: auto;
+   }
+
+   .searched-course-name{
+       color: black;
+      
+       text-align: left;
+       font-size: 20px;
+   }
+   .searched-credit{
+       color: lightgray;
+       text-align: left;
+       font-size: 15px;
    }
 
    /* Set gray background color and 100% height */

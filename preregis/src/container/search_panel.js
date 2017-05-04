@@ -17,24 +17,23 @@ class SearchPanel extends Component {
                     <input type="text" className="form-control" className="col-sm-12 search searchName" placeholder="Course Name : Gen Phy II" aria-describedby="basic-addon1" />
                 
                 <br/>
-                <button className="searchbotton">search</button>
+                <button className="btn btn-primary" type="botton">search</button>
                 <hr/>
 
+                <div className="col-sm-12 searched-course-name">
+                    88888888 : Fmmmm 
+                    <div className="searched-credit">(2 credit)</div>
+                    <br/>   
+                </div>
+                
+
                 <botton className="courselist col-sm-6">
-                    88888888 (2 credit)
-                    <br/>
-                    Fmmmm
-                    <br/>
                     By aj.Fmmmm
                     <br/>
                     Time : 9.00-11.00
                 </botton>
 
                 <botton className="courselist2 col-sm-6">
-                    88888888 (2 credit)
-                    <br/>
-                    Fmmmm
-                    <br/>
                     By aj.Fmmmm
                     <br/>
                     Time : 9.00-11.00
