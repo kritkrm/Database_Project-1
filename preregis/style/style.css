@@ -27,7 +27,7 @@ body {
    .row.content {
        height: 975px;
        padding: 10px;
-       background-color: lightgray;
+       background-color: white;
     }
 
     /*white box*/
@@ -36,8 +36,8 @@ body {
        background-color: #FFFFFF; /* white */
        color: #111111;
        padding: 20px 30px 20px 30px;
-       border-radius: 20px;
-       margin: 20px;
+       border : 1.3px dashed lightgray; 
+       margin: 30px;
    }
 
    #rcorners1 {
