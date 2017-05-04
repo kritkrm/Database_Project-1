@@ -27,7 +27,7 @@ body {
    .row.content {
        height: 975px;
        padding: 10px;
-       background-color: white;
+       /*background-color: white;*/
     }
     .main-content {
         width: 80%;
@@ -45,6 +45,7 @@ body {
    #rcorners1 {
      color: #FFFFFF;
      background: #73AD21;
+     border-radius: 10px;
      padding: 10px;
      font-size: 15px;
      text-align:center;
@@ -163,7 +164,7 @@ body {
      background-color: #222;
      height: 150px;
      padding: 20px;
-     color: white;
+     /*color: white;*/
    }
 
    .App-intro {
