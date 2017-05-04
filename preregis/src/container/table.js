@@ -25,7 +25,7 @@ class Table extends Component {
                     ],
                     [
                         {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
-                        {name: "KUY", period: 4}, {name: "", period: 0}, {name: "", period: 0}
+                        {name: "KUY", period: 3}, {name: "", period: 0}, {name: "", period: 0}
                     ],
                     [
                         {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
@@ -53,7 +53,6 @@ class Table extends Component {
         return (
             <div className="col-sm-8 text-left">
                 <div className="jumbotron">
-                      <h1>CU Pre-regis</h1>
                       <div className="row" >
                           <div className="col-sm-2"></div>
                           {time_periods.map(this.renderTimePeriods)}
