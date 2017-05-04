@@ -3,6 +3,7 @@ import Table from '../container/table';
 import SearchPanel from '../container/search_panel';
 import NavBar from '../container/nav_bar';
 import Footer from '../container/footer';
+import Header from '../container/header';
 
 
 class HomePage extends Component {
@@ -10,14 +11,15 @@ class HomePage extends Component {
     return (
       <div classNameName="App">
         <NavBar />
-
+        <div className="main-content">
         <div className="row content">
             <div className="text-center">
+                <Header />
                 <Table />
                 <SearchPanel />
             </div>
         </div>
-
+        </div>
         <Footer />
       </div>
 
