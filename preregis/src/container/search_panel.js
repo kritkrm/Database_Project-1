@@ -23,20 +23,22 @@ class SearchPanel extends Component {
                             <span className="input-group-addon"><i className="glyphicon glyphicon-book"></i></span>
                             <input type="text" className="form-control" name="email" placeholder="Course Name : Gen Phy II" />
                         </div>
+
+
                     </form>
-        
-                <button className="btn btn-primary" type="botton">search</button>
-                <hr/>
+                    <button className="btn btn-primary" type="botton">search</button>
+                    <hr/>
 
                 <div className="col-sm-12 searched-course-name">
-                    88888888 : Fmmmm<div className="searched-credit">(2 credit)</div>
+                    88888888 : Fmmmm
+                    <div className="searched-credit">(2 credit)</div>
                 </div>
                 
 
-                <botton className="courselist col-sm-6">
-                    By aj.Fmmmm
+                <botton className="courselist col-sm-12">
+                    SEC 1   By aj.Fmmmm
                     <br/>
-                    Time : 9.00-11.00
+                    Time : 9.00-11.00  Room : 1412
                 </botton>
 
                 <botton className="courselist2 col-sm-6">

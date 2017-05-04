@@ -70,18 +70,20 @@ body {
    }
 
    .courselist {
-       padding : 5px 10px 5px 10px;
+       padding : 5px;
        text-align: left;
-       border: 1px solid lightgray;
+       border: 0.5px solid lightgray;
        height: auto;
+       margin: 0.5px;
    }
 
    .courselist2 {
-       padding : 5px 10px 5px 10px;
+       padding : 5px;
        text-align: left;
        background-color: lightgray;
-       border: 1px solid lightgray;
+       border: 0.5px solid lightgray;
        height: auto;
+       margin: 0.5px;
    }
 
    .searched-course-name{
