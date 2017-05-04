@@ -24,9 +24,7 @@ class Table extends Component {
                   <div className="row">
                       <div className="col-sm-2 text-center"><p>Monday</p></div>
                       <div className="col-sm-2"><p id="rcorners1">Calculus I</p></div>
-
                       <div className="col-sm-2"><p id="rcorners1">Gen Phy I</p></div>
-
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
@@ -44,12 +42,11 @@ class Table extends Component {
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
                   </div>
 
                   <div className="row">
                       <div className="col-sm-2 text-center"><p>Wednesday</p></div>
+                      <SubjectBar period={2} name="FMM" />
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
@@ -69,18 +66,13 @@ class Table extends Component {
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
-                      <SubjectBar period={3} name="FM" />
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                   </div>
 
                   <div className="row">
                       <div className="col-sm-2 text-center"><p>Friday</p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
-                      <div className="col-sm-1"><p> </p></div>
+                      <SubjectBar period={5} name="Focus" />
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
                       <div className="col-sm-1"><p> </p></div>
