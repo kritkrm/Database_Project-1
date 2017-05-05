@@ -43,7 +43,7 @@ class Table extends Component {
 
     renderTimePeriods(timePeriod) {
         return (
-            <div className="col-xs-1"><p>{timePeriod}</p></div>
+            <div className="col-xs-1 no-padding"><p>{timePeriod}</p></div>
         );
     }
 
