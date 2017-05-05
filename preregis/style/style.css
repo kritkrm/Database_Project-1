@@ -21,6 +21,9 @@ body {
 
    /* CU  Pre-regis*/
    .headtitle {
+      /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
+      /*background-size: cover; */
+      /*height: 400px;*/
 
    }
    .headtitle > h1{
@@ -73,17 +76,12 @@ body {
    .input-group{
       margin-bottom: 10px;
    }
-
-   .courselist {
+   .panel-default {
+      box-shadow: 1px 1px 1.5px lightgrey;
    }
 
-   .courselist2 {
-       padding : 5px;
-       text-align: left;
-       background-color: lightgray;
-       border: 0.5px solid lightgray;
-       height: auto;
-       margin: 0.5px;
+   .courselist {
+
    }
 
    .searched-course-name{

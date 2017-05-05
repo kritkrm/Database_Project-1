@@ -37,7 +37,7 @@ class SearchPanel extends Component {
                         </div>
                 
                     <ul className="list-group">
-                        <a href="#" className="list-group-item courselist">
+                        <a href="#" className="list-group-item">
                             SEC 1   By aj.Fmmmm
                             <br/>
                             Time : 9.00-11.00  Room : 1412
