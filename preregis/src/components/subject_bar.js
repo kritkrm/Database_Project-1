@@ -4,12 +4,12 @@ class SubjectBar extends Component {
     render() {
             if(this.props.period == 0) {
                 return (
-                    <div className="col-sm-1"><p> </p></div>
+                    <div className="col-xs-1"><p> </p></div>
                 );
             }
-            let per = "col-sm-" + this.props.period.toString();
+            let per = "col-xs-" + this.props.period.toString() + " no-padding";
             return (
-                 <div className={per}><p id="rcorners1">{this.props.name}</p></div>
+                 <div className={per}><p className="rcorners1">{this.props.name}</p></div>
             );
     }
 }

@@ -11,6 +11,7 @@ body {
    .navbar {
      margin-bottom: 0px;
      border-radius: 0px;
+     min-width: 800px;
    }
    /*TOP BAR*/
    #myNavbar> ul >li >a,p{
@@ -43,6 +44,8 @@ body {
 
     .main-content {
         width: 80%;
+        min-width: 800px;
+        max-width: 1200px;
         margin: auto;
     }
     /*white box*/
@@ -56,7 +59,31 @@ body {
        margin: auto;
    }
 
-   #rcorners1 {
+   .no-padding {
+     padding: 0px;
+   }
+
+   .flex-center {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+   }
+
+   .my-table {
+     width: 700px;
+     margin-right: 10px;
+   }
+
+   .my-table > div {
+     min-width: 700px;
+   }
+
+   @media all and (max-width: px) {
+     /*CSS class Applied only when screen is smaller than or equal to 767px*/
+   }
+
+   .rcorners1 {
      color: #FFFFFF;
      background: #73AD21;
      border-radius: 10px;

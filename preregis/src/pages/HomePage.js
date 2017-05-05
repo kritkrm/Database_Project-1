@@ -15,8 +15,10 @@ class HomePage extends Component {
         <div className="row content">
             <div className="text-center">
                 <Header />
-                <Table />
-                <SearchPanel />
+                <div className="flex-center">
+                  <Table />
+                  <SearchPanel />
+                </div>
             </div>
         </div>
         </div>
