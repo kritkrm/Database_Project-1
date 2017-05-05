@@ -13,7 +13,7 @@ class NavBar extends Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                    <img className="navbar-brand sm-padding" src="../../resource/logo2.png" />
+                    <img className="navbar-brand sm-padding" src="../../resource/logo3.png" />
                     </div>
 
                     <div className="collapse navbar-collapse" id="myNavbar">
