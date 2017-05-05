@@ -75,12 +75,12 @@ body {
    }
 
    .my-table {
-     width: 900px;
+     width: 800px;
      margin-right: 10px;
    }
 
    .my-table > div {
-     min-width: 900px;
+     min-width: 800px;
    }
 
    @media all and (max-width: px) {
