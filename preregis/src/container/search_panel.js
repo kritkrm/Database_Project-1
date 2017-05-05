@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class SearchPanel extends Component {
   render() {
     return (
-        <div className="col-xs-4 text-center ">
+        <div className="col-xs-4 text-center my-panel">
             <div className="panel panel-default">
 
                 <div className="panel-heading">Panel Heading</div>

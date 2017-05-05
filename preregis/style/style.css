@@ -11,7 +11,7 @@ body {
    .navbar {
      margin-bottom: 0px;
      border-radius: 0px;
-     min-width: 800px;
+     min-width: 900px;
    }
    /*TOP BAR*/
    #myNavbar> ul >li >a,p{
@@ -43,9 +43,8 @@ body {
     }
 
     .main-content {
-        width: 80%;
         min-width: 800px;
-        max-width: 1200px;
+        max-width: 1400px;
         margin: auto;
     }
     /*white box*/
@@ -58,7 +57,9 @@ body {
        box-shadow: 1px 1px 1.5px lightgrey;
        margin: auto;
    }
+   .my-panel {
 
+   }
    .no-padding {
      padding: 0px;
    }
@@ -71,12 +72,12 @@ body {
    }
 
    .my-table {
-     width: 700px;
+     width: 900px;
      margin-right: 10px;
    }
 
    .my-table > div {
-     min-width: 700px;
+     min-width: 900px;
    }
 
    @media all and (max-width: px) {
@@ -138,7 +139,7 @@ body {
    }
 
    /* On small screens, set height to 'auto' for sidenav and grid */
-   @media screen and (max-width: 767px) {
+   @media screen and (max-width: 800px) {
      .sidenav {
        height: 0px;
        padding: 15px;
@@ -150,17 +151,7 @@ body {
      text-align: center;
    }
 
-   .App-logo {
-     animation: App-logo-spin infinite 20s linear;
-     height: 80px;
-   }
 
-   .App-header {
-     background-color: #222;
-     height: 150px;
-     padding: 20px;
-     /*color: white;*/
-   }
 
    .App-intro {
      font-size: large;
