@@ -25,15 +25,15 @@ body {
       /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
       /*background-size: cover; */
       /*height: 400px;*/
+      text-align: center;
+   }
+   .headtitle > img {
+      /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
+      /*background-size: cover; */
+      height: 400px;
 
    }
-   .headtitle > h1{
-       text-align: center;
-       color: black;
-       margin-bottom: 40px;
-       font-size: 64px;
-       font-weight: bold;
-   }
+
 
    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
    /* Set background to lightgray */
@@ -65,7 +65,12 @@ body {
    }
 
    .my-color {
-     background-color: #FF0000;
+
+         color: #000000;
+         background: #FFFFFF;
+         border-color: #000000;
+          border-style: solid;
+     /*background-color: #FF0000;*/
    }
    .flex-center {
      display: flex;
@@ -74,13 +79,23 @@ body {
      flex-wrap: wrap;
    }
 
+
    .my-table {
      width: 800px;
      margin-right: 10px;
    }
-
+   .navbar-brand
+    {
+        position: absolute;
+    left: 50%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+    }
    .my-table > div {
      min-width: 800px;
+   }
+   .sm-padding {
+       padding: 5px;
    }
 
    @media all and (max-width: px) {
