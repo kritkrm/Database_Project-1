@@ -3,11 +3,12 @@ import React, { Component } from 'react';
 class SearchPanel extends Component {
   render() {
     return (
-        <div className="col-sm-4 text-center">
-            <div className="jumbotron">
-                    <h3>List of course</h3>
-                    <hr/>
-
+        <div className="col-sm-4 text-center ">
+            <div className="panel panel-default">
+                
+                <div className="panel-heading">Panel Heading</div>
+                
+                <div className="panel-body">
                     <form>
                         <div className="input-group">
                             <span className="input-group-addon"><i className="glyphicon glyphicon-time"></i></span>
@@ -29,42 +30,24 @@ class SearchPanel extends Component {
                     <button className="btn btn-primary" type="botton">search</button>
                     <hr/>
 
-                <div className="col-sm-12 searched-course-name">
-                    88888888 : Fmmmm
-                    <div className="searched-credit">(2 credit)</div>
-                </div>
+                    <div className="col-sm-12">
+                        <div className="searched-course-name">
+                        88888888 : Fmmmm <span className="badge">12</span>
+                        <div className="searched-credit">(2 credit)</div>
+                        </div>
                 
+                    <ul className="list-group">
+                        <a href="#" className="list-group-item courselist">
+                            SEC 1   By aj.Fmmmm
+                            <br/>
+                            Time : 9.00-11.00  Room : 1412
+                        </a>
+                        <a href="#" className="list-group-item">Deleted</a> 
+                        <a href="#" className="list-group-item">Warnings</a> 
+                    </ul>
+                    </div>
 
-                <botton className="courselist col-sm-12">
-                    SEC 1   By aj.Fmmmm
-                    <br/>
-                    Time : 9.00-11.00  Room : 1412
-                </botton>
-
-                <botton className="courselist2 col-sm-6">
-                    By aj.Fmmmm
-                    <br/>
-                    Time : 9.00-11.00
-                </botton>
-
-                <botton className="courselist col-sm-6">
-                    By aj.Fmmmm
-                    <br/>
-                    Time : 9.00-11.00
-                </botton>
-
-                <botton className="courselist col-sm-6">
-                    By aj.Fmmmm
-                    <br/>
-                    Time : 9.00-11.00
-                </botton>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                </div>
             </div>
         </div>
     );
