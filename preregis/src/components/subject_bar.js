@@ -10,6 +10,7 @@ class SubjectBar extends Component {
             let per = "col-xs-" + this.props.period.toString() + " no-padding";
             return (
                  <div className={per}><p className="rcorners1 grayline">{this.props.name}</p></div>
+                 
             );
     }
 }

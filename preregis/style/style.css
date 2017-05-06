@@ -62,16 +62,11 @@ body {
 /*---------------------------------------------table-----------------------------------------------*/
     /*white box*/
    .jumbotron {
-       background-color: #FFFFFF; /* white */
+       background-color: white;
        color: #111111;
        padding: 0px 0px 0px 0px;
-       /*padding: 20px 30px 20px 30px;*/
-       /*border : 1px solid lightgray;*/
        border: 1px solid lightgray;
-       /*border-radius: 5px;*/
-       /*box-shadow: 1px 1px 1.5px lightgrey;*/
        margin: auto;
-
    }
    .my-panel {
 
@@ -111,17 +106,17 @@ body {
    }
    .grayline {
       /*margin-top: 20px;*/
-      border-right: 1px dashed lightgray;
+      border-left: 1px dashed lightgray;
       padding: 20px; 
       margin:  0px;
    }
    .blankbox {
-      height: 72px;
+      height: 71px;
    }
    .blackline {
       /*margin-top: 20px;*/
       border-bottom: 1px solid lightgray;
-      border-top: 1px solid lightgray;
+      /*border-top: 1px solid lightgray;*/
       padding: 20px;
    }
    @media all and (max-width: px) {
@@ -137,10 +132,13 @@ body {
      text-align: center;
      box-shadow: 2.5px 2.5px 2.5px grey;
      /*margin-top: 10px;*/
+      /*border-top: 10px solid white;*/
+     /*position: center center;*/
    }
 
    .col-sm-1 {
        padding: 0px;
+       margin: 0px;
        /*height: 30px;*/
    }
    .col-sm-2 {
@@ -151,9 +149,7 @@ body {
 /*---------------------------------------------search panel-----------------------------------------------*/
    .input-group{
       margin: 0px 30px 10px 30px;
-
    }
-
 
    .panel-default {
       box-shadow: 1px 1px 1.5px lightgrey;
