@@ -60,6 +60,7 @@ class Table extends Component {
                       <div className="row">
                           <div className="col-xs-2 text-center"><p>Monday</p></div>
                           {this.state.subjects[0].map(this.renderSubjects)}
+
                       </div>
                       <div className="row">
                           <div className="col-xs-2 text-center"><p>Tuesday</p></div>

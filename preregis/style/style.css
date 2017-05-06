@@ -1,16 +1,27 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 10;
+  /*height: 900px;*/
   font-family: sans-serif;
   background-color: white;
 }
+
+
+.main-content {
+        min-width: 800px;
+        max-width: 1400px;
+        height: 900px;       
+        margin: auto;
+        padding-top: 50px;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
-
-
+/*---------------------------------------------nav-bar-----------------------------------------------*/
    /*TOP BAR*/
    .navbar {
      margin-bottom: 0px;
      border-radius: 0px;
+     padding: 10px;
      min-width: 900px;
    }
    /*TOP BAR*/
@@ -19,8 +30,17 @@ body {
        padding-top: 15px;
    }
 
+   .navbar-brand
+    {
+        position: absolute;
+        left: 50%;
+        margin-left: -110px !important;  /* 50% of your logo width */
+        display: block;
+    }
 
-   /* CU  Pre-regis*/
+
+
+/*---------------------------------------------header-----------------------------------------------*/
    .headtitle {
       /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
       /*background-size: cover; */
@@ -30,23 +50,15 @@ body {
    .headtitle > img {
       /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
       /*background-size: cover; */
-      height: 400px;
-
+      /*height: 400px;*/
    }
 
 
    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
    /* Set background to lightgray */
-   .row.content {
-       height: 975px;
-       padding: 10px;
-    }
+   
 
-    .main-content {
-        min-width: 800px;
-        max-width: 1400px;
-        margin: auto;
-    }
+/*---------------------------------------------table-----------------------------------------------*/
     /*white box*/
    .jumbotron {
        background-color: #FFFFFF; /* white */
@@ -65,13 +77,13 @@ body {
    }
 
    .my-color {
-
          color: #000000;
          background: #FFFFFF;
          border-color: #000000;
-          border-style: solid;
+         border-style: solid;
      /*background-color: #FF0000;*/
    }
+
    .flex-center {
      display: flex;
      justify-content: center;
@@ -79,23 +91,23 @@ body {
      flex-wrap: wrap;
    }
 
-
    .my-table {
      width: 800px;
      margin-right: 10px;
    }
-   .navbar-brand
-    {
-        position: absolute;
-    left: 50%;
-    margin-left: -50px !important;  /* 50% of your logo width */
-    display: block;
-    }
+   
    .my-table > div {
      min-width: 800px;
    }
    .sm-padding {
-       padding: 5px;
+      padding: 5px;
+   }
+   .grayline {
+      
+      /*margin-top: 20px;*/
+
+      border-right: 1px dashed lightgray;
+      padding: 20px;
    }
 
    @media all and (max-width: px) {
@@ -108,28 +120,28 @@ body {
      border-radius: 10px;
      padding: 10px;
      font-size: 15px;
-     text-align:center;
+     text-align: center;
      box-shadow: 2.5px 2.5px 2.5px grey;
+     /*margin-top: 10px;*/
    }
 
    .col-sm-1 {
        padding: 0px;
-       height: 30px;
+       /*height: 30px;*/
    }
    .col-sm-2 {
        padding: 0px;
+       margin: 0px;
    }
+
+/*---------------------------------------------search panel-----------------------------------------------*/
    .input-group{
       margin-bottom: 10px;
    }
+
    .panel-default {
       box-shadow: 1px 1px 1.5px lightgrey;
    }
-
-   .courselist {
-
-   }
-
    .searched-course-name{
        color: black;
        text-align: left;
@@ -148,14 +160,18 @@ body {
      background-color: #f1f1f1;
      height: 100%;*/
    }
-
+/*---------------------------------------------footer-----------------------------------------------*/
    /* Set black background color, white text and some padding */
    footer {
      background-color: #555;
      color: white;
      padding: 15px;
+
+
    }
 
+
+/*---------------------------------------------somethingggggg-----------------------------------------------*/
    /* On small screens, set height to 'auto' for sidenav and grid */
    @media screen and (max-width: 800px) {
      .sidenav {
