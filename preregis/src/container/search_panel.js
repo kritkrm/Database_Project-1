@@ -6,7 +6,7 @@ class SearchPanel extends Component {
         <div className="col-xs-4 text-center my-panel">
             <div className="panel panel-default">
 
-                <div className="panel-heading">Panel Heading</div>
+                <div className="panel-heading"> </div>
 
                 <div className="panel-body">
                     <form>

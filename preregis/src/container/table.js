@@ -11,25 +11,29 @@ class Table extends Component {
                     [
                         {name: "Focus", period: 2}, {name: "", period: 0},
                         {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
-                        {name: "", period: 0}, {name: "", period: 0}
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}, 
+                        {name: "", period: 0}
                     ],
                     [
                         {name: "", period: 0}, {name: "FMM", period: 2}, {name: "", period: 0},
                         {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}
+                    ],
+                    [
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}, 
                         {name: "", period: 0}
                     ],
                     [
                         {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
-                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
+                        {name: "KUY", period: 3}, {name: "", period: 0}, {name: "fm", period: 1},
                         {name: "", period: 0}, {name: "", period: 0}
-                    ],
-                    [
-                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0},
-                        {name: "KUY", period: 3}, {name: "", period: 0}, {name: "", period: 0}
                     ],
                     [
                         {name: "thipok", period: 4}, {name: "Tham", period: 2},
-                        {name: "", period: 0}, {name: "", period: 0}
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}, 
+                        {name: "", period: 0}
                     ],
                 ]
         };
@@ -43,20 +47,20 @@ class Table extends Component {
 
     renderTimePeriods(timePeriod) {
         return (
-            <div className="col-xs-1 no-padding"><p className="my-color">{timePeriod}</p></div>
+            <div className="col-xs-1 no-padding"><p className="my-color grayline blackline">{timePeriod}</p></div>
         );
     }
 
     render() {
-        let time_periods = ['8', '9', '10', '11', '12', '13', '14', '15', '16'];
+        let time_periods = ['8', '9', '10', '11', '12', '13', '14', '15', '16' ,'17'];
         return (
-            <div className="col-sm-8 text-left my-table">
+            <div className="col-sm-8 text-left my-table ">
                 <div className="jumbotron">
                       <div className="row" >
-                          <div className="col-xs-2"></div>
+                          <div className="col-xs-2 blackline blankbox"></div>
                           {time_periods.map(this.renderTimePeriods)}
                       </div>
-                      <hr/>
+                      
                       <div className="row">
                           <div className="col-xs-2 text-center"><p>Monday</p></div>
                           {this.state.subjects[0].map(this.renderSubjects)}

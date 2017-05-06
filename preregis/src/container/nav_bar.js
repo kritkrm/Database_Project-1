@@ -18,11 +18,12 @@ class NavBar extends Component {
 
                     <div className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav navbar-left">
-                            <li><p>Chulalongkorn University</p></li>
+                            
                         </ul>
 
                         <ul className="nav navbar-nav navbar-right">
-                            <li><a href="#">FM & FOCUS KUY ▼</a></li>
+                            <li><a href="#">Chulalongkorn University</a></li>
+                            <li><a href="#">FM & FOCUS KUY</a></li>
                         </ul>
                     </div>
             </nav>

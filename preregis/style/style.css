@@ -21,7 +21,7 @@ body {
    .navbar {
      margin-bottom: 0px;
      border-radius: 0px;
-     padding: 10px;
+     padding: 5px;
      min-width: 900px;
    }
    /*TOP BAR*/
@@ -33,9 +33,10 @@ body {
    .navbar-brand
     {
         position: absolute;
-        left: 50%;
-        margin-left: -110px !important;  /* 50% of your logo width */
+        /*left: 50%;*/
+        /*margin-left: -110px !important;  /* 50% of your logo width */*/
         display: block;
+        height: 90%;
     }
 
 
@@ -63,25 +64,30 @@ body {
    .jumbotron {
        background-color: #FFFFFF; /* white */
        color: #111111;
-       padding: 20px 30px 20px 30px;
-       border : 1px solid lightgray;
-       border-radius: 5px;
-       box-shadow: 1px 1px 1.5px lightgrey;
+       padding: 0px 0px 0px 0px;
+       /*padding: 20px 30px 20px 30px;*/
+       /*border : 1px solid lightgray;*/
+       border: 1px solid lightgray;
+       /*border-radius: 5px;*/
+       /*box-shadow: 1px 1px 1.5px lightgrey;*/
        margin: auto;
+
    }
    .my-panel {
 
    }
    .no-padding {
      padding: 0px;
+     margin: 0px;
    }
 
    .my-color {
          color: #000000;
          background: #FFFFFF;
-         border-color: #000000;
-         border-style: solid;
-     /*background-color: #FF0000;*/
+         text-align: center;
+         /*border-color: #000000;*/
+         /*border-style: solid;*/
+         /*background-color: #FF0000;*/
    }
 
    .flex-center {
@@ -99,17 +105,25 @@ body {
    .my-table > div {
      min-width: 800px;
    }
+
    .sm-padding {
       padding: 5px;
    }
    .grayline {
-      
       /*margin-top: 20px;*/
-
       border-right: 1px dashed lightgray;
+      padding: 20px; 
+      margin:  0px;
+   }
+   .blankbox {
+      height: 72px;
+   }
+   .blackline {
+      /*margin-top: 20px;*/
+      border-bottom: 1px solid lightgray;
+      border-top: 1px solid lightgray;
       padding: 20px;
    }
-
    @media all and (max-width: px) {
      /*CSS class Applied only when screen is smaller than or equal to 767px*/
    }
@@ -136,11 +150,14 @@ body {
 
 /*---------------------------------------------search panel-----------------------------------------------*/
    .input-group{
-      margin-bottom: 10px;
+      margin: 0px 30px 10px 30px;
+
    }
+
 
    .panel-default {
       box-shadow: 1px 1px 1.5px lightgrey;
+      margin-left: 15px;
    }
    .searched-course-name{
        color: black;
