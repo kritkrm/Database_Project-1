@@ -32,8 +32,8 @@ class Table extends Component {
                     ],
                     [
                         {name: "thipok", period: 4}, {name: "Tham", period: 2},
-                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}, 
-                        {name: "", period: 0}
+                        {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}, {name: "", period: 0}
+                        
                     ],
                 ]
         };
@@ -47,7 +47,7 @@ class Table extends Component {
 
     renderTimePeriods(timePeriod) {
         return (
-            <div className="col-xs-1 no-padding"><p className="my-color grayline blackline">{timePeriod}</p></div>
+            <div className="col-xs-1 no-padding"><p className="my-color  blackline">{timePeriod}</p></div>
         );
     }
 
@@ -56,7 +56,8 @@ class Table extends Component {
         return (
         
             <div className="jumbotron">
-            <div className="col-sm-8 text-left my-table">
+
+            <div className="col-sm-8 text-left  my-table" >
                 
                       <div className="row" >
                           <div className="col-xs-2 blackline blankbox"></div>
@@ -87,7 +88,8 @@ class Table extends Component {
                           <div className="col-xs-2 text-center"><p>Friday</p></div>
                           {this.state.subjects[4].map(this.renderSubjects)}
                       </div>
-                </div>
+
+            </div>          
             </div>
     );
   }

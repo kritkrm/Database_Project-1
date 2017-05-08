@@ -13,6 +13,7 @@ body {
         height: 900px;       
         margin: auto;
         padding-top: 50px;
+        width: 100%;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
@@ -36,79 +37,66 @@ body {
         /*left: 50%;*/
         /*margin-left: -110px !important;  /* 50% of your logo width */*/
         display: block;
-        height: 90%;
     }
 
 
 
 /*---------------------------------------------header-----------------------------------------------*/
-   .headtitle {
-      /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
-      /*background-size: cover; */
-      /*height: 400px;*/
-      text-align: center;
-   }
-   .headtitle > img {
-      /*background: pink url("https://s-media-cache-ak0.pinimg.com/originals/8f/c5/3f/8fc53fc5d0336c5eec2921c0033e33fc.png") no-repeat center center;*/
-      /*background-size: cover; */
-      /*height: 400px;*/
-   }
-
-
-   /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-   /* Set background to lightgray */
    
-
 /*---------------------------------------------table-----------------------------------------------*/
     /*white box*/
    .jumbotron {
        background-color: white;
        color: #111111;
-       padding: 0px 0px 0px 0px;
-       border: 1px solid lightgray;
-       margin: auto;
+       padding: 0px;
+       border-top: 1px solid lightgray;
+       border-bottom: 1px solid lightgray;
+       margin: 0px;
+       height: 440px;
+       /*position: fixed;*/
+       /*float: left;*/
    }
    .my-panel {
 
    }
    .no-padding {
      padding: 0px;
-     margin: 0px;
+     
    }
 
    .my-color {
          color: #000000;
-         background: #FFFFFF;
-         text-align: center;
-         /*border-color: #000000;*/
-         /*border-style: solid;*/
-         /*background-color: #FF0000;*/
    }
 
    .flex-center {
      display: flex;
      justify-content: center;
-     align-items: center;
+     /*align-items: center;*/
      flex-wrap: wrap;
+     
    }
 
    .my-table {
      width: 800px;
-     margin-right: 10px;
+     height: 300px;
+     /*margin-right: 10px;*/
+     
    }
    
    .my-table > div {
      min-width: 800px;
+     
    }
 
    .sm-padding {
       padding: 5px;
+      
    }
    .grayline {
       /*margin-top: 20px;*/
       border-left: 1px dashed lightgray;
       padding: 20px; 
-      margin:  0px;
+      
    }
    .blankbox {
       height: 71px;
@@ -154,7 +142,13 @@ body {
    .panel-default {
       box-shadow: 1px 1px 1.5px lightgrey;
       margin-left: 15px;
+      padding-top: 15px;
    }
+
+   .badge{
+      margin-left: 10px;
+   }
+
    .searched-course-name{
        color: black;
        text-align: left;
@@ -164,6 +158,43 @@ body {
        color: lightgray;
        text-align: left;
        font-size: 15px;
+       margin-bottom: 10px;
+   }
+   .list-group{
+       /*overflow-y: scroll;*/
+       /*height: 500px;*/
+   }
+   .list-group-item{
+      padding: 5px 15px 10px 15px;   
+   }
+
+   .secname{
+      font-size: 20px;
+      margin-bottom: -10px; 
+      /*margin-bottom: 5px;*/
+      color: black;
+      text-align: left;
+      display: inline-flex;
+      float: left;
+   }
+   .teachername{
+      font-size: 15px;
+      padding: 2px 0px 0px 20px; /*Oop*/
+      margin-bottom: 5px;
+      display: inline-flex;      
+      float: right;
+   }
+   .long2{
+      font-size: 15px;
+      display: inline-flex;      
+      float: right;
+      margin-top: 2px;
+   }
+   .long1{
+      font-size: 15px;
+      float: left;
+      display: inline-flex;      
+      margin-top: 5px;
    }
 
    /* Set gray background color and 100% height */

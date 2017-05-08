@@ -6,8 +6,6 @@ class SearchPanel extends Component {
         <div className="col-xs-4 text-center my-panel">
             <div className="panel panel-default">
 
-                <div className="panel-heading"> </div>
-
                 <div className="panel-body">
                     <form>
                         <div className="input-group">
@@ -32,20 +30,51 @@ class SearchPanel extends Component {
 
                     <div className="col-sm-12">
                         <div className="searched-course-name">
-                        88888888 : Fmmmm <span className="badge">12</span>
-                        <div className="searched-credit">(2 credit)</div>
+                            88888888 : Fmmmm   <span className="badge">12</span>
                         </div>
-
-                    <ul className="list-group">
-                        <a href="#" className="list-group-item">
-                            SEC 1   By aj.Fmmmm
-                            <br/>
-                            Time : 9.00-11.00  Room : 1412
-                        </a>
-                        <a href="#" className="list-group-item">Deleted</a>
-                        <a href="#" className="list-group-item">Warnings</a>
-                    </ul>
+                        <div className="searched-credit">
+                            (2 credit)
+                        </div>
+                    
+                    
+                        <ul className="list-group">
+                            <a href="#" className="list-group-item">
+                                <div className="secname">Sec. 1  <div className="teachername">By : aj.Fmmmmmm <br/>Time : 9.00-11.00 Room : 1412</div></div>
+                                <br/>
+                                <br/>
+                            </a>
+                            <a href="#" className="list-group-item">
+                                <div className="secname">Sec. 2</div>
+                                <div className="long2">Time : 9.00-11.00</div>
+                                <br/>
+                                <div className="long1">By : aj.Fmmmmmcfffm </div>
+                                <div className="teachername">Room : 1412</div>
+                                <br/>
+                            </a>
+                            <a href="#" className="list-group-item">
+                                <div className="secname">Sec. 2</div>
+                                <div className="long2">Time : 9.00-11.00</div>
+                                <br/>
+                                <div className="long1">By : aj.Fmmmmmcfffm </div>
+                                <div className="teachername">Room : 1412</div>
+                                <br/>
+                            </a>
+                            <a href="#" className="list-group-item">
+                                <div className="secname">Sec. 2</div>
+                                <div className="long2">Time : 9.00-11.00</div>
+                                <br/>
+                                <div className="long1">By : aj.Fmmmmmcfffm </div>
+                                <div className="teachername">Room : 1412</div>
+                                <br/>
+                            </a>
+                            <a href="#" className="list-group-item">Warnings</a>
+                            <a href="#" className="list-group-item">Deleted</a>
+                            <a href="#" className="list-group-item">Warnings</a>
+                            <a href="#" className="list-group-item">Deleted</a>
+                            <a href="#" className="list-group-item">Warnings</a>
+                        </ul>
                     </div>
+                    
 
                 </div>
             </div>
