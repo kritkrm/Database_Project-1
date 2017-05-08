@@ -44,6 +44,20 @@ body {
 /*---------------------------------------------header-----------------------------------------------*/
    
 /*---------------------------------------------table-----------------------------------------------*/
+
+   .all-icon{
+      text-align: right;
+   }
+   .my-icon{
+      padding-left: 10px;
+      font-size: 25px;
+      color: gray;
+   }
+  button {
+    border: 0px;
+    background-color: white; 
+  }
+
     /*white box*/
    .jumbotron {
        background-color: white;
@@ -80,7 +94,6 @@ body {
      width: 800px;
      height: 300px;
      /*margin-right: 10px;*/
-     
    }
    
    .my-table > div {
