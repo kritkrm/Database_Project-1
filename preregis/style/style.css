@@ -35,7 +35,7 @@ body {
     {
         position: absolute;
         /*left: 50%;*/
-        /*margin-left: -110px !important;  /* 50% of your logo width */*/
+        /*margin-left: -110px !important;  /* 50% of your logo width */
         display: block;
     }
 
@@ -44,19 +44,41 @@ body {
 /*---------------------------------------------header-----------------------------------------------*/
    
 /*---------------------------------------------table-----------------------------------------------*/
-
-   .all-icon{
-      text-align: right;
+   .pagination{
+      text-align: left;
    }
-   .my-icon{
-      padding-left: 10px;
+   .left-icon{
+      padding-right: 10px;
+      text-align: left;
       font-size: 25px;
       color: gray;
    }
+   .right-icon{
+      text-align: right;
+      font-size: 25px;
+      color: gray;
+   }
+
   button {
     border: 0px;
     background-color: white; 
   }
+  #myModal {
+      top:0%;
+      right:0%;
+  }
+
+  .modal-header{
+    height: 75px;
+  }
+
+  .modal-logo {
+      height: 100px;
+      position: absolute;
+      top: -15px;
+      right: 32%;
+  }
+
 
     /*white box*/
    .jumbotron {
