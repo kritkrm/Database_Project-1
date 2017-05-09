@@ -56,12 +56,6 @@ class Table extends Component {
         return (
 
               <div className="outterjumbotron">
-                <ul className="pagination">
-                  <li><a href="#"><i className="left-icon glyphicon glyphicon-calendar"></i></a></li>
-                  <li className="active"><a href="#"><i className="left-icon glyphicon glyphicon-list"></i></a></li>
-                </ul>
-                
-                
                 <div className="jumbotron">
                   <div className="col-sm-8 text-left my-table" >
                 

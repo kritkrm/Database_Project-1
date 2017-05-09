@@ -44,15 +44,7 @@ body {
 /*---------------------------------------------header-----------------------------------------------*/
    
 /*---------------------------------------------table-----------------------------------------------*/
-   .pagination{
-      text-align: left;
-   }
-   .left-icon{
-      padding-right: 10px;
-      text-align: left;
-      font-size: 25px;
-      color: gray;
-   }
+
    .right-icon{
       text-align: right;
       font-size: 25px;
@@ -63,11 +55,7 @@ body {
     border: 0px;
     background-color: white; 
   }
-  #myModal {
-      top:0%;
-      right:0%;
-  }
-
+  
   .modal-header{
     height: 75px;
   }

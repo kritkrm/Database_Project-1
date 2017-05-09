@@ -39,7 +39,8 @@ class SearchPanel extends Component {
                     
                         <ul className="list-group">
                             <a href="#" className="list-group-item">
-                                <div className="secname">Sec. 1  <div className="teachername">By : aj.Fmmmmmm <br/>Time : 9.00-11.00 Room : 1412</div></div>
+                                <div className="secname">Sec. 1  <div className="teachername">By : aj.Fmmmmmm <br/>Time : 9.00-11.00<br/>Room : 1412</div></div>
+                                <br/>
                                 <br/>
                                 <br/>
                             </a>
