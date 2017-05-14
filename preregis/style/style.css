@@ -55,7 +55,7 @@ body {
     border: 0px;
     background-color: white; 
   }
-  
+
   .modal-header{
     height: 75px;
   }
@@ -193,31 +193,18 @@ body {
 
    .secname{
       font-size: 20px;
-      margin-bottom: -10px; 
-      /*margin-bottom: 5px;*/
+      padding: 20px 0px 0px 5px;
+      margin: 0px;
       color: black;
       text-align: left;
-      display: inline-flex;
+      display: inline-block;
       float: left;
    }
    .teachername{
       font-size: 15px;
-      padding: 2px 0px 0px 20px; /*Oop*/
-      margin-bottom: 5px;
-      display: inline-flex;      
-      float: right;
-   }
-   .long2{
-      font-size: 15px;
-      display: inline-flex;      
-      float: right;
-      margin-top: 2px;
-   }
-   .long1{
-      font-size: 15px;
-      float: left;
-      display: inline-flex;      
-      margin-top: 5px;
+      padding: 1px 0px 0px 25px; /*Oop*/
+      display: inline-block;      
+      text-align: left;      
    }
 
    /* Set gray background color and 100% height */

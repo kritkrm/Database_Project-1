@@ -38,35 +38,14 @@ class SearchPanel extends Component {
                     
                     
                         <ul className="list-group">
-                            <a href="#" className="list-group-item">
-                                <div className="secname">Sec. 1  <div className="teachername">By : aj.Fmmmmmm <br/>Time : 9.00-11.00<br/>Room : 1412</div></div>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </a>
-                            <a href="#" className="list-group-item">
-                                <div className="secname">Sec. 2</div>
-                                <div className="long2">Time : 9.00-11.00</div>
-                                <br/>
-                                <div className="long1">By : aj.Fmmmmmcfffm </div>
-                                <div className="teachername">Room : 1412</div>
-                                <br/>
-                            </a>
-                            <a href="#" className="list-group-item">
-                                <div className="secname">Sec. 2</div>
-                                <div className="long2">Time : 9.00-11.00</div>
-                                <br/>
-                                <div className="long1">By : aj.Fmmmmmcfffm </div>
-                                <div className="teachername">Room : 1412</div>
-                                <br/>
-                            </a>
-                            <a href="#" className="list-group-item">
-                                <div className="secname">Sec. 2</div>
-                                <div className="long2">Time : 9.00-11.00</div>
-                                <br/>
-                                <div className="long1">By : aj.Fmmmmmcfffm </div>
-                                <div className="teachername">Room : 1412</div>
-                                <br/>
+                            <a href="#" className="list-group-item text-left">
+                                    <div className="teachername">By : aj.Fmmmmmm <br/></div>
+                                    <div className="secname">Sec. 1  </div>
+                                    <div className="teachername">Time : 9.00-11.00</div>
+                                    <br/>
+                                    <div className="teachername">Room : 1412</div>
+                              
+                              
                             </a>
                             <a href="#" className="list-group-item">Warnings</a>
                             <a href="#" className="list-group-item">Deleted</a>
