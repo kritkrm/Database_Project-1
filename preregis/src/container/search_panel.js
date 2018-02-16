@@ -151,7 +151,7 @@ class SearchPanel extends Component {
   render() {
     return (
         <div className="col-xs-4">
-            <div className="panel panel-default">
+            <div className="panel panel-default" style={{ height:'700px', overflow: 'scroll'}}>
                 <div className="panel-body">
                     <div className="input-group"> 
                     <span className="input-group-addon"><i className="glyphicon glyphicon-calendar"></i></span>  
@@ -189,12 +189,17 @@ class SearchPanel extends Component {
                                         
                                         <div className="courseNostyle" > { element.courseNo } </div>
                                         <div className="namestyle" > { element.name } </div>
-                                        <button onClick={()=> this.props.falseOnlist(element.index)} className="checkbuttonstyle">
-                                            <span className="glyphicon glyphicon-remove " style={{ display: 'inline'}} ></span>
-                                        </button>
-                                        <button onClick={()=> this.props.trueOnlist(element.index)} className="checkbuttonstyle">
-                                            <span className="glyphicon glyphicon-ok " style={{ display: 'inline'}} ></span>
-                                        </button>
+                                       
+                                        { element.onList && 
+                                            <button onClick={()=> this.props.falseOnlist(element.index)} className="checkbuttonstyle">
+                                                <span className="glyphicon glyphicon-check" style={{ display: 'inline'}} ></span>
+                                            </button>
+                                        }
+                                        { !element.onList && 
+                                            <button onClick={()=> this.props.trueOnlist(element.index)} className="checkbuttonstyle">
+                                                <span className="glyphicon glyphicon-unchecked" style={{ display: 'inline'}} ></span>
+                                            </button>
+                                        }
                                     
                                         <div className="text-left" > 
                                             { 

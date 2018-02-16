@@ -10,7 +10,7 @@ class HomePage extends Component {
   constructor(props){
     super(props);
     this.state = {
-      classOnTable: [],
+      classOnTable: [[], [], [], [], []],
       subject: [
         { 
           courseNo: '0295101', 
@@ -141,10 +141,28 @@ class HomePage extends Component {
   }
 
   trueOnlist(index) {
-    let copySubject = this.state.subject;
-    copySubject[index].onList = true;
+    let copySubject = this.state.subject[index];
+    console.log(copySubject);
+    let copyAllSubject = this.state.subject;
+    let available = true;
+    for(var i = 0; i < copySubject.time.length; i++){
+      let day = copySubject.time[i].day-1;
+      for(var j = 0; j < this.state.classOnTable[day].length; j++){
+        let classNow = this.state.classOnTable[day][j];
+        if( classNow.courseNo != null &&
+            ( classNow.start >= copySubject.time[i].start && classNow.start < copySubject.time[i].end) ||
+            ( classNow.end > copySubject.time[i].start && classNow.end <= copySubject.time[i].end)) {
+              available = false;
+        }
+      }
+
+
+    }
+
+
+    copyAllSubject[index].onList = available;
     this.setState({
-        subject: copySubject,
+        subject: copyAllSubject,
     });
     this.createClass();
   }
@@ -175,6 +193,8 @@ class HomePage extends Component {
                   courseNo: subj[i].courseNo,
                   name: subj[i].name,
                   index: subj[i].index,
+                  start: obj[j].start,
+                  end: obj[j].end,
                   period: (obj[j].end - obj[j].start)/50,
 
                 };
@@ -221,13 +241,11 @@ class HomePage extends Component {
         <div className="main-content">
           <div className="row content">
 
-              <div>
-                  
                   <div className="flex-center">
                     <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable}/>      
                     <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />
                   </div>
-              </div>
+              
 
           </div>
         </div>

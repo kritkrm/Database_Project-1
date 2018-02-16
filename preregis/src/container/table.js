@@ -4,6 +4,8 @@ import SubjectBar from '../components/subject_bar';
 
 class Table extends Component {
 
+    colors = ['red', 'pink', 'blue'];
+
     constructor(props) {
         super(props);
     }
@@ -17,7 +19,7 @@ class Table extends Component {
     renderTimePeriods(timePeriod) {
         return (
             <div style={{ display: 'inline', width: '10%'}}>
-                <div className="timeperiod my-color" style={{ width: '5%' }}> {timePeriod }</div>
+                <div className="timeperiod my-color" style={{ width: '5%' , paddingLeft: `${timePeriod.length<2 ? `10px`: `0`}`}}> {timePeriod}</div>
                 <div className="timeperiod my-color" style={{ width: '5%' }}> </div>
             </div>
         );
@@ -32,25 +34,22 @@ class Table extends Component {
         else if(index == 5)label = 'Friday';
         else if(index == 6)label = 'Saturday';
         else if(index == 7)label = 'Sunday';
-        else label = 'focus';
-
-        console.log("ghwejhfkaf");
 
         return (
-            <div style={{ display: 'inline-block' }}>
+            <div style={{ display: 'inline-block', fontSize: '20px', textAlign:'right', width: '90%', paddingTop:'20px', height: '100%'}}>
                 {label}
             </div>
         );
     }
 
-    renderClass(detail) {
+    renderClass(detail, idx) {
         if(detail.courseNo == null){
             return (
                 <div style={{ height: '100%', display: 'inline-block', width: '5%'}}></div>
             );
         } else {
             return (
-                <div style={{ top: 0, height: '100%', backgroundColor: 'red', display: 'inline-block', width: `${detail.period*5}%`}}>
+                <div className="classstyle" style={{width: `${detail.period*5}%`}}>
                     { detail.name }
                 </div>
             );
@@ -66,23 +65,26 @@ class Table extends Component {
               <div >
                 <div className="jumbotron">
                   <div className="col-sm-8 text-left my-table" >
-                      <div className="row" style={{ width: '100%'}} >
-                          <div className="col-xs-2  blankbox"></div>
-                          <div className="col-xs-10  blankbox no-padding" style={{ height: '100%' }}>{time_periods.map(this.renderTimePeriods)}</div>
+                      <div className="blackline" />
+                      <div className="row" style={{ width: '100%' }} >
+                      
+                          <div className="col-xs-2"></div>
+                          <div className="col-xs-10 no-padding" style={{ height: '100%' }}>{time_periods.map(this.renderTimePeriods)}</div>
                       </div>
                       
-                      <div className="blackline" />
+                      <div className="blackline" style={{ marginBottom: '5px'}}/>
                       
                       {
                           this.props.classOnTable.map((day, index)=> {
                               return(
-                                  <div className="row" style={{ width: '100%', height: '40px' }}>
+                                  <div className="row" style={{ width: '100%', height: '60px' }}>
                                       <div className="col-xs-2">{ this.renderDay(index+1) }</div>
-                                      <div className="col-xs-10 no-padding" style={{ height: '100%', display: 'flex' }}>{ day.map((detail) => { return this.renderClass(detail) }) }</div> 
+                                      <div className="col-xs-10 no-padding" style={{ paddingLeft: '13px', height: '100%', display: 'flex' }}>{ day.map((detail, idx) => { return this.renderClass(detail, idx) }) }</div> 
                                   </div>  
                               )
                           })
                       }
+                      <div className="blackline" style={{ marginTop: '5px'}}/>
                   </div>          
                 </div>
 
