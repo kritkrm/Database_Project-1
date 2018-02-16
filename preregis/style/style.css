@@ -1,16 +1,24 @@
 body {
   font-family: sans-serif;
 }
-
+/* Homepage */
 .main-content {
-        min-width: 800px;
-        max-width: 1400px;
-        height: 100%;       
-        margin: auto;
-        padding-top: 50px;
-        width: 100%;
-        overflow-x: hidden;
+  min-width: 800px;
+  max-width: 1400px;
+  height: 100%;       
+  margin: auto;
+  padding-top: 50px;
+  width: 100%;
 }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: hidden;
+  height: 100%;
+  
+}
+
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 /*---------------------------------------------nav-bar-----------------------------------------------*/
@@ -24,26 +32,9 @@ body {
    
 /*---------------------------------------------table-----------------------------------------------*/
 
-   .right-icon{
-      text-align: right;
-      font-size: 25px;
-      color: gray;
-   }
-
   button {
     border: 0px;
     background-color: null; 
-  }
-
-  .modal-header{
-    height: 75px;
-  }
-
-  .modal-logo {
-      height: 100px;
-      position: absolute;
-      top: -15px;
-      right: 32%;
   }
 
 
@@ -51,20 +42,10 @@ body {
    .jumbotron {
        background-color: white;
        padding: 0px;
-       /* border-top: 1px solid lightgray; */
-       /* border-bottom: 1px solid lightgray; */
-       height: 350px;
-       /*position: fixed;*/
-       /*float: left;*/
+       height: 350px; 
    }
    .no-padding {
      padding: 0px;
-   }
-
-   .my-color {
-      color: #000000;
-      font-size: 20px;
-      /* border: 1px solid pink; */
    }
 
    .classstyle {
@@ -80,81 +61,50 @@ body {
       border-radius: 5px;
       background: gray;
       color: white;
-      
    }
+
    .timeperiod {
-        display: inline-block;
-        text-align: left;
-        width: 4%;
-        padding: 10px 0 10px 0;
-        /* border: 1px solid pink; */
+      display: inline-block;
+      text-align: left;
+      padding: 10px 0 10px 0;
+      color: #000000;
+      font-size: 20px;
+   }
+   .daystyle {
+      display: inline-block;
+      font-size: 20px;
+      text-align:right;
+      width: 90%;
+      padding:20px 0px 0px 0px;
+      height: 100%;
    }
 
-   .flex-center {
-     display: flex;
-     justify-content: center;
-     /*align-items: center;*/
-     flex-wrap: wrap;
-     overflow-y: hidden;
-     height: 100%;
-     
-   }
-
-   .my-table {
-     width: 800px;
-     height: 300px;
-     padding: 0 !important;
-     /*margin-right: 10px;*/
-   }
-   
    .my-table > div {
      min-width: 800px;
-     padding: 0 !important;
+     /* padding: 0 !important; */
    }
 
-   .sm-padding {
-      padding: 5px;
-      
-   }
-   .grayline {
-      /*margin-top: 20px;*/
-      border-left: 1px dashed lightgray;
-      padding: 20px; 
-      
-   }
    .blackline {
-      /*margin-top: 20px;*/
       border-bottom: 1px solid lightgray;
       width: 100%;
       margin: 0;
       padding: 0;
-      /*border-top: 1px solid lightgray;*/
-   
    }
-   @media all and (max-width: px) {
-     /*CSS class Applied only when screen is smaller than or equal to 767px*/
-   }
-
-   .col-sm-1 {
-       padding: 0px;
-       margin: 0px;
-       /*height: 30px;*/
-   }
-   .col-sm-2 {
-       padding: 0px;
-       margin: 0px;
+   .col-xs-2 {
+     padding: 0;
    }
 
 /*---------------------------------------------search panel-----------------------------------------------*/
    .input-group{
       margin: 0px 30px 10px 30px;
-      
    }
 
    .panel-default {
       box-shadow: 1px 1px 1.5px lightgrey;
       margin-left: 15px;
-      padding-top: 15px;
+      height: 700px; 
+      overflow: scroll;
+      padding: 30px 15px 15px 15px;
    }
    .selectstyle {
      z-index: 999 !important;
@@ -166,6 +116,7 @@ body {
     color: gray;
     margin: 0px 0px 10px 0px;
    }
+
   .list-group.item {
     padding: 0px !important;
   }
@@ -202,10 +153,6 @@ body {
        padding: 15px;
      }
      .row.content {height:100%;}
-   }
-
-   .App {
-     text-align: center;
    }
 
 

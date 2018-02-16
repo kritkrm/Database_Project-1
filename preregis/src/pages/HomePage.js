@@ -14,7 +14,7 @@ class HomePage extends Component {
       subject: [
         { 
           courseNo: '0295101', 
-          name: 'intro to data sci', 
+          name: 'Intro to Data Sci', 
           time: [
             { start: 1300, end: 1600, day: 5 }, 
           ],
@@ -23,7 +23,7 @@ class HomePage extends Component {
         },
         { 
           courseNo: '2301108', 
-          name: 'calculus ii', 
+          name: 'Calculus II', 
           time: [
             { start: 800, end: 950, day: 1 }, 
             { start: 950, end: 1100, day: 3 }
@@ -32,7 +32,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2304104',
-          name: 'gen phy ii ',
+          name: 'Gen Phy II ',
           time: [
             { start: 950, end: 1100, day: 1 },
             { start: 800, end: 950, day: 5 },
@@ -41,7 +41,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2304184', 
-          name: 'gen phy lab ii',
+          name: 'Gen Phy Lab II',
           time: [
             { start: 1300, end: 1600, day: 1 },
           ],  
@@ -49,7 +49,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2109101', 
-          name: 'eng materials',
+          name: 'Eng Materials',
           time: [
             { start: 1100, end: 1250, day: 2 },
             { start: 800, end: 950, day: 3 },
@@ -58,14 +58,15 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2110101', 
-          name: 'comp prog', time: [
+          name: 'Comp Prog', 
+          time: [
             { start: 800, end: 1100, day: 2 },
           ],  
           index: 5,
           onList: false,
         }, { 
           courseNo: '5500112', 
-          name: 'exp eng ii', 
+          name: 'Exp Eng II', 
           time: [
             { start: 950, end: 1100, day: 3 },
           ], 
@@ -73,7 +74,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2100111', 
-          name: 'expl eng world', 
+          name: 'Expl Eng World', 
           time: [
             { start: 950, end: 1250, day: 5 },
           ], 
@@ -81,7 +82,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2110594', 
-          name: 'adv top comp iv', 
+          name: 'Adv Top Comp IV', 
           time: [
             { start: 900, end: 1200, day: 1 },
           ], 
@@ -89,7 +90,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2110471', 
-          name: 'comp network i', time: [
+          name: 'Comp Network I', time: [
             { start: 1300, end: 1500, day: 2 },
             { start: 950, end: 1150, day: 3 },
           ], 
@@ -97,7 +98,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2110332', 
-          name: 'sys analysis dsgn',
+          name: 'Sys Analysis Dsgn',
           time: [
             { start: 950, end: 1100, day: 2 },
             { start: 950, end: 1100, day: 4 },
@@ -106,7 +107,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2110422', 
-          name: 'db mgt sys design', 
+          name: 'Db Mgt Sys Design', 
           time: [
             { start: 800, end: 950, day: 2 },
             { start: 800, end: 950, day: 4 },
@@ -115,7 +116,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '2110318', 
-          name: 'dis sys essen', 
+          name: 'Dis Sys Essen', 
           time: [
             { start: 800, end: 900, day: 3 },
           ],  
@@ -123,7 +124,7 @@ class HomePage extends Component {
           onList: false,
         }, { 
           courseNo: '5500308', 
-          name: 'tech writ eng', 
+          name: 'Tech Writ Eng', 
           time: [
             { start: 900, end: 1200, day: 5 },
           ], 
@@ -134,7 +135,6 @@ class HomePage extends Component {
       
     };
 
-
     this.trueOnlist = this.trueOnlist.bind(this);
     this.falseOnlist = this.falseOnlist.bind(this);
     this.createClass = this.createClass.bind(this);
@@ -142,23 +142,22 @@ class HomePage extends Component {
 
   trueOnlist(index) {
     let copySubject = this.state.subject[index];
-    console.log(copySubject);
     let copyAllSubject = this.state.subject;
     let available = true;
+
     for(var i = 0; i < copySubject.time.length; i++){
       let day = copySubject.time[i].day-1;
       for(var j = 0; j < this.state.classOnTable[day].length; j++){
         let classNow = this.state.classOnTable[day][j];
-        if( classNow.courseNo != null &&
+        if( 
+            classNow.courseNo != null && 
             ( classNow.start >= copySubject.time[i].start && classNow.start < copySubject.time[i].end) ||
-            ( classNow.end > copySubject.time[i].start && classNow.end <= copySubject.time[i].end)) {
-              available = false;
+            ( classNow.end > copySubject.time[i].start && classNow.end <= copySubject.time[i].end)
+          ) {
+            available = false;
         }
       }
-
-
     }
-
 
     copyAllSubject[index].onList = available;
     this.setState({
@@ -175,6 +174,7 @@ class HomePage extends Component {
     });
     this.createClass();
   }
+
   createClass() {
     let subj = this.state.subject;
     let copyClass = [[],[],[],[],[],[],[],[]];
@@ -196,7 +196,6 @@ class HomePage extends Component {
                   start: obj[j].start,
                   end: obj[j].end,
                   period: (obj[j].end - obj[j].start)/50,
-
                 };
               }
             }
@@ -209,15 +208,12 @@ class HomePage extends Component {
         }
       }
     }
-    console.log(copyClass);
+    
     let res = [[], [], [], [], []];
     for(var day = 1; day < 6; day++) {
       for(var time = 800; time < 1700; time+=50) {
         var idx = (time - 800) / 50;
         var obj = copyClass[day][idx];
-        if(obj == null) {
-          console.log(day, time);
-        }
         if(obj.courseNo == '0') {
           res[day-1].push({ subject: null, period: 1 });  
         } else {
@@ -227,11 +223,9 @@ class HomePage extends Component {
       }
     }
     
-
     this.setState({
         classOnTable: res,
     });
-    console.log(this.state.classOnTable);
   }
 
   render() {
@@ -239,15 +233,10 @@ class HomePage extends Component {
       <div>
         <NavBar />
         <div className="main-content">
-          <div className="row content">
-
-                  <div className="flex-center">
-                    <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable}/>      
-                    <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />
-                  </div>
-              
-
-          </div>
+            <div className="flex-center">
+              <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable}/>      
+              <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />
+            </div>
         </div>
       </div>
 

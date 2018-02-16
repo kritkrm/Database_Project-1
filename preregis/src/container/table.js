@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 import SubjectBar from '../components/subject_bar';
 
 class Table extends Component {
-
-    colors = ['red', 'pink', 'blue'];
-
     constructor(props) {
         super(props);
     }
@@ -19,8 +16,13 @@ class Table extends Component {
     renderTimePeriods(timePeriod) {
         return (
             <div style={{ display: 'inline', width: '10%'}}>
-                <div className="timeperiod my-color" style={{ width: '5%' , paddingLeft: `${timePeriod.length<2 ? `10px`: `0`}`}}> {timePeriod}</div>
-                <div className="timeperiod my-color" style={{ width: '5%' }}> </div>
+                <div 
+                    className="timeperiod" 
+                    style={{ width: '5%' , paddingLeft: `${timePeriod.length<2 ? `10px`: `0`}`}}
+                > 
+                    {timePeriod}
+                </div>
+                <div className="timeperiod" style={{ width: '5%' }}> </div>
             </div>
         );
     }
@@ -36,7 +38,7 @@ class Table extends Component {
         else if(index == 7)label = 'Sunday';
 
         return (
-            <div style={{ display: 'inline-block', fontSize: '20px', textAlign:'right', width: '90%', paddingTop:'20px', height: '100%'}}>
+            <div className="daystyle" >
                 {label}
             </div>
         );
@@ -62,35 +64,32 @@ class Table extends Component {
         let time_periods = ['8', '9', '10', '11', '12', '13', '14', '15', '16' ,'17'];
         return (
 
-              <div >
+            <div >
                 <div className="jumbotron">
-                  <div className="col-sm-8 text-left my-table" >
-                      <div className="blackline" />
-                      <div className="row" style={{ width: '100%' }} >
-                      
-                          <div className="col-xs-2"></div>
-                          <div className="col-xs-10 no-padding" style={{ height: '100%' }}>{time_periods.map(this.renderTimePeriods)}</div>
-                      </div>
-                      
-                      <div className="blackline" style={{ marginBottom: '5px'}}/>
-                      
-                      {
-                          this.props.classOnTable.map((day, index)=> {
-                              return(
-                                  <div className="row" style={{ width: '100%', height: '60px' }}>
-                                      <div className="col-xs-2">{ this.renderDay(index+1) }</div>
-                                      <div className="col-xs-10 no-padding" style={{ paddingLeft: '13px', height: '100%', display: 'flex' }}>{ day.map((detail, idx) => { return this.renderClass(detail, idx) }) }</div> 
-                                  </div>  
-                              )
-                          })
-                      }
-                      <div className="blackline" style={{ marginTop: '5px'}}/>
-                  </div>          
+                    <div className="col-sm-8 text-left my-table" >
+                        <div className="blackline" />
+                        <div className="row" style={{ width: '100%' }} > 
+                            <div className="col-xs-2"></div>
+                            <div className="col-xs-10 no-padding" style={{ height: '100%' }}>{time_periods.map(this.renderTimePeriods)}</div>
+                        </div>
+                        <div className="blackline" style={{ marginBottom: '5px'}} />
+                        {
+                            this.props.classOnTable.map((day, index)=> {
+                                return(
+                                    <div className="row" style={{ width: '100%', height: '60px' }}>
+                                        <div className="col-xs-2">{ this.renderDay(index+1) }</div>
+                                        <div className="col-xs-10 no-padding" style={{ paddingLeft: '13px', height: '100%', display: 'flex' }}>{ day.map((detail, idx) => { return this.renderClass(detail, idx) }) }</div> 
+                                    </div>  
+                                )
+                            })
+                        }
+                        <div className="blackline" style={{ marginTop: '5px'}}/>
+                    </div>          
                 </div>
 
                 <div style={{ width : '800px', marginTop: '20px'}} >
                     {
-                        
+
                         this.props.subject.map((element) => {
                             return(
                                 <div style={{display: 'inline-block'}}>
@@ -102,19 +101,14 @@ class Table extends Component {
                                                 <span className="glyphicon glyphicon-remove" style={{ display: 'inline'}} ></span>
                                             </button>
                                         </div> 
-                                        
-
                                     }
                                 </div>
                                 
                             )}
                         )
                     }
-                
                 </div>
-
-
-              </div>
+            </div>
     );
   }
 }

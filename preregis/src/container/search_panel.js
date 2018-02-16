@@ -15,9 +15,8 @@ class SearchPanel extends Component {
             name: '',
             searchResult: this.props.subject,
             day: null,
-
-
         };
+        
         this.onNameChange = this.onNameChange.bind(this);
         this.onCourseNoChange = this.onCourseNoChange.bind(this);
         this.onFilter = this.onFilter.bind(this);
@@ -25,15 +24,14 @@ class SearchPanel extends Component {
         this.onStartTimeChange = this.onStartTimeChange.bind(this);
         this.onEndTimeChange = this.onEndTimeChange.bind(this);
         this.onDayChange = this.onDayChange.bind(this);
-        
     }
 
     onFilter(name, courseNo, day) {
         let copyResult = [];
         copyResult = this.props.subject.filter((subject) => { 
             return (
-                ( subject.name.indexOf(name) >= 0 || name == '' ) &&
-                ( subject.courseNo.indexOf(courseNo) >= 0 || courseNo == '' ) &&
+                ( name == null || name.length == 0 || subject.name.indexOf(name) >= 0 ) &&
+                ( courseNo == null || courseNo.length == 0 || subject.courseNo.indexOf(courseNo) >= 0 ) &&
                 this.onFilterDay(subject, day)
             )
         })
@@ -44,9 +42,12 @@ class SearchPanel extends Component {
 
     onFilterDay(subject, day) {
         let available = false;
-        for(var i = 0; i < subject.time.length; i++){
-            if(subject.time[i].day == day.value || day.value == 0)
+
+        if(day == null) day = { value: 0};
+        for(var i = 0; i < subject.time.length; i++) {
+            if(day.value == 0 || subject.time[i].day == day.value) {
                 available = true;
+            }
         }
         return available;
     }
@@ -64,10 +65,7 @@ class SearchPanel extends Component {
     }
 
     onDayChange(day) {
-        let nullDay = { value: 0 };
-        if(day != null) this.onFilter(this.state.name, this.state.courseNo, day);
-        else this.onFilter(this.state.name, this.state.courseNo, nullDay);
-        
+        this.onFilter(this.state.name, this.state.courseNo, day);
         this.setState({
             day: day,
         });
@@ -85,10 +83,7 @@ class SearchPanel extends Component {
         this.setState({
             name: this.refs.name.value,
         });
-    }
-
-    showOnTable() {
-        
+        console.log(this.refs.name.value);
     }
 
     timeOption() {
@@ -151,45 +146,53 @@ class SearchPanel extends Component {
   render() {
     return (
         <div className="col-xs-4">
-            <div className="panel panel-default" style={{ height:'700px', overflow: 'scroll'}}>
-                <div className="panel-body">
-                    <div className="input-group"> 
+            <div className="panel panel-default" >
+                <div className="input-group"> 
                     <span className="input-group-addon"><i className="glyphicon glyphicon-calendar"></i></span>  
-                        <Select  
-                            options={ this.dayOption() }
-                            value={ this.state.day }
-                            placeholder="Day"
-                            onChange={ this.onDayChange }
-                            className="text-left selectstyle"
-                        />
+                    <Select  
+                        options={ this.dayOption() }
+                        value={ this.state.day }
+                        placeholder="Day"
+                        onChange={ this.onDayChange }
+                        className="text-left selectstyle"
+                    />
+                </div>
+
+                <div className="input-group" >
+                    <span className="input-group-addon"><i className="glyphicon glyphicon-tag"></i></span>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        ref="courseNo" 
+                        placeholder="Course NO. : 88888888" 
+                        value={this.state.courseNo} 
+                        onChange={() => this.onCourseNoChange()} 
+                    />
+                </div>
+
+                <div className="input-group">
+                    <span className="input-group-addon"><i className="glyphicon glyphicon-book"></i></span>
+                    <input 
+                        type="text" 
+                        className="form-control"
+                        ref="name" 
+                        placeholder="Course Name : Gen Phy II" 
+                        value={this.state.name} onChange={() => this.onNameChange()} 
+                    />
+                </div>
+                <div className="blackline" style={{ marginTop: '30px', marginBottom: '20px'}} />
+
+                <div className="col-sm-12">    
+                    <div className="resultstyle">
+                        ( Result : {this.state.searchResult.length} { this.state.searchResult.length >= 2 ? 'classes )' : 'class )' }
                     </div>
-                   
-
-                    <div className="input-group" >
-                        <span className="input-group-addon"><i className="glyphicon glyphicon-tag"></i></span>
-                        <input type="text" className="form-control" ref="courseNo" placeholder="Course NO. : 88888888" value={this.state.courseNo} onChange={() => this.onCourseNoChange()} />
-                    </div>
-
-                    <div className="input-group">
-                        <span className="input-group-addon"><i className="glyphicon glyphicon-book"></i></span>
-                        <input type="text" className="form-control" ref="name" placeholder="Course Name : Gen Phy II" value={this.state.name} onChange={() => this.onNameChange()} />
-                    </div>
-
-                    <hr/>
-
-                    <div className="col-sm-12">    
-                        <div className="resultstyle">
-                           ( Result : {this.state.searchResult.length} { this.state.searchResult.length >= 2 ? 'classes )' : 'class )' }
-                        </div>
-                        <ul className="list-group">
+                    <ul className="list-group">
                         { 
                             this.state.searchResult.map((element) => { 
                                 return (
                                     <div className="list-group-item" onClick={() => this.showOnTable()}>
-                                        
                                         <div className="courseNostyle" > { element.courseNo } </div>
                                         <div className="namestyle" > { element.name } </div>
-                                       
                                         { element.onList && 
                                             <button onClick={()=> this.props.falseOnlist(element.index)} className="checkbuttonstyle">
                                                 <span className="glyphicon glyphicon-check" style={{ display: 'inline'}} ></span>
@@ -200,7 +203,6 @@ class SearchPanel extends Component {
                                                 <span className="glyphicon glyphicon-unchecked" style={{ display: 'inline'}} ></span>
                                             </button>
                                         }
-                                    
                                         <div className="text-left" > 
                                             { 
                                                 element.time.map((time) => {
@@ -214,16 +216,13 @@ class SearchPanel extends Component {
                                                 ) 
                                             } 
                                         </div>
-                                       
                                     </div>
                                 )}
                             )
                         }
-                        </ul>
-                    </div>
-                    
-
+                    </ul>
                 </div>
+                    
             </div>
         </div>
     );
