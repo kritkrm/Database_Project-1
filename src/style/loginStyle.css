@@ -1,13 +1,17 @@
-body{
+
+/*====== Start SigIn ======*/
+.signin-container {
     background-color: #5FCC9C;
     margin: 0;
+    height: 100vh;
     padding: 0;
+    padding-top: 80px;
     font-family: 'Ubuntu', sans-serif;
     direction: ltr;
 }
-/*====== Start SigIn ======*/
 .signin{
     background: #215B63;
+    
     color:#fff;
     padding: 7px 10px;
     overflow: hidden;
@@ -52,10 +56,11 @@ body{
 /*====== End SigIn ======*/
 .signup{
     width: 400px;
-    margin: 80px auto;
+    margin: auto;
     background-color: #FFF;
     padding: 10px;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
     overflow: hidden;
 }
 .signup > h1{
@@ -95,7 +100,8 @@ body{
     outline: none;
     border-bottom-color: #58c791;
 }
-.signup input[type=submit]{
+.signup button{
+    width: 257px;
     position: relative;
     margin: 37px auto;
     position: relative;
@@ -109,12 +115,12 @@ body{
     padding: 0;
     box-shadow: 0 5px 0 #3aad73;
 }
-.signup input[type=submit]:hover{
+.signup button:hover{
     top: 2px;
     box-shadow: 0 3px 0 #3aad73;
     cursor: pointer;
 }
-.signup input[type=submit]:active{
+.signup button:active{
     top:5px;
     box-shadow: none;
 }
