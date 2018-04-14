@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import Footer from '../container/footer';
 import Header from '../container/header';
-import NavBar from '../container/nav_bar';
 import SearchPanel from '../container/search_panel';
 import Table from '../container/table';
 
@@ -231,7 +230,6 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <div className="main-content">
             <div className="flex-center">
               <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable}/>      
