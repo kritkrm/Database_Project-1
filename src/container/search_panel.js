@@ -30,7 +30,7 @@ class SearchPanel extends Component {
         let copyResult = [];
         copyResult = this.props.subject.filter((subject) => { 
             return (
-                ( name == null || name.length == 0 || subject.name.indexOf(name) >= 0 ) &&
+                ( name == null || name.length == 0 || subject.name.toLowerCase().indexOf(name) >= 0 ) &&
                 ( courseNo == null || courseNo.length == 0 || subject.courseNo.indexOf(courseNo) >= 0 ) &&
                 this.onFilterDay(subject, day)
             )
@@ -79,7 +79,7 @@ class SearchPanel extends Component {
     }
     
     onNameChange() {
-        this.onFilter(this.refs.name.value, this.state.courseNo, this.state.day);
+        this.onFilter(this.refs.name.value.toLowerCase(), this.state.courseNo, this.state.day);
         this.setState({
             name: this.refs.name.value,
         });
