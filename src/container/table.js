@@ -64,9 +64,9 @@ class Table extends Component {
         let time_periods = ['8', '9', '10', '11', '12', '13', '14', '15', '16' ,'17'];
         return (
 
-            <div >
-                <div className="jumbotron">
-                    <div className="col-sm-8 text-left my-table" >
+            <div style={{ width: '100%', height: '100%', padding: '48px' }}>
+                <div className="jumbotron" style={{ width: '100%', height: '100%' }}>
+                    <div className="col-sm-12 text-left my-table" >
                         <div className="blackline" />
                         <div className="row" style={{ width: '100%' }} > 
                             <div className="col-xs-2"></div>
@@ -85,28 +85,6 @@ class Table extends Component {
                         }
                         <div className="blackline" style={{ marginTop: '5px'}}/>
                     </div>          
-                </div>
-
-                <div style={{ width : '800px', marginTop: '20px'}} >
-                    {
-
-                        this.props.subject.map((element) => {
-                            return(
-                                <div style={{display: 'inline-block'}}>
-                                    { element.onList==false ? '' :
-                                        <div style={{border: '1px solid lightgray', padding: '10px', margin: '5px'}}>
-                                            <div className="courseNostyle" > { element.courseNo } </div>
-                                            <div className="namestyle" > { element.name } </div>
-                                            <button onClick={()=> this.props.falseOnlist(element.index)}>
-                                                <span className="glyphicon glyphicon-remove" style={{ display: 'inline'}} ></span>
-                                            </button>
-                                        </div> 
-                                    }
-                                </div>
-                                
-                            )}
-                        )
-                    }
                 </div>
             </div>
     );

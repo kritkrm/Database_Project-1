@@ -6,7 +6,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 class LoginPage extends Component {
     render() {
         return (
-            <div className="signin-container">
+            <div className="signin-container" style={{overflow: 'hidden'}}>
                 <Tabs style={{ width: '400px', margin: 'auto', borderTopRightRadius: '5px', borderTopLeftRadius: '5px' }}>
                     <Tab label="Student" style={{ borderTopRightRadius: '5px', borderTopLeftRadius: '5px' }}>
                         <div className="signup">

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import DashboardStudent from './pages/DashboardStudent';
 import DashboardTeacher from './pages/DashboardTeacher';
@@ -13,7 +12,9 @@ class App extends Component {
     // page: 'studentDashboard',
     // page: 'teacherDashboard',
   };
-
+  logOut = () => {
+    this.setState({ page: 'login' });
+  }
   changePage = (pageName) => {
     this.setState({ page: pageName });
   }
@@ -24,10 +25,9 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ overflowX: 'hidden' }}>
-        <NavBar />
+      <div style={{ overflow: 'hidden', height: '100%' }}>
+        <NavBar logOut={this.logOut} />
         {this.state.page === 'login' && <LoginPage changePage={this.changePage} />}
-        {this.state.page === 'home' && <HomePage />}
         {this.state.page === 'studentDashboard' && <DashboardStudent />}
         {this.state.page === 'teacherDashboard' && <DashboardTeacher />}
       </div>

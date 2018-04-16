@@ -144,85 +144,110 @@ class SearchPanel extends Component {
     }
 
   render() {
+    console.log(this.props.subject);
     return (
-        <div className="col-xs-4">
-            <div className="panel panel-default" >
-                <div className="input-group"> 
-                    <span className="input-group-addon"><i className="glyphicon glyphicon-calendar"></i></span>  
-                    <Select  
-                        options={ this.dayOption() }
-                        value={ this.state.day }
-                        placeholder="Day"
-                        onChange={ this.onDayChange }
-                        className="text-left selectstyle"
-                    />
-                </div>
-
-                <div className="input-group" >
-                    <span className="input-group-addon"><i className="glyphicon glyphicon-tag"></i></span>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        ref="courseNo" 
-                        placeholder="Course NO. : 88888888" 
-                        value={this.state.courseNo} 
-                        onChange={() => this.onCourseNoChange()} 
-                    />
-                </div>
-
-                <div className="input-group">
-                    <span className="input-group-addon"><i className="glyphicon glyphicon-book"></i></span>
-                    <input 
-                        type="text" 
-                        className="form-control"
-                        ref="name" 
-                        placeholder="Course Name : Gen Phy II" 
-                        value={this.state.name} onChange={() => this.onNameChange()} 
-                    />
-                </div>
-                <div className="blackline" style={{ marginTop: '30px', marginBottom: '20px'}} />
-
-                <div className="col-sm-12">    
-                    <div className="resultstyle">
-                        ( Result : {this.state.searchResult.length} { this.state.searchResult.length >= 2 ? 'classes )' : 'class )' }
+        <div className="row" style={{ height: '100%' }}>
+            <div className="col-xs-6" style={{ height: '100%' }}>
+                <div className="panel panel-default" style={{ height: '100%', overflow: 'hidden' }}>
+                    <div className="input-group"> 
+                        <span className="input-group-addon"><i className="glyphicon glyphicon-calendar"></i></span>  
+                        <Select  
+                            options={ this.dayOption() }
+                            value={ this.state.day }
+                            placeholder="Day"
+                            onChange={ this.onDayChange }
+                            className="text-left selectstyle"
+                        />
                     </div>
-                    <ul className="list-group">
-                        { 
-                            this.state.searchResult.map((element) => { 
-                                return (
-                                    <div className="list-group-item" onClick={() => this.showOnTable()}>
-                                        <div className="courseNostyle" > { element.courseNo } </div>
-                                        <div className="namestyle" > { element.name } </div>
-                                        { element.onList && 
-                                            <button onClick={()=> this.props.falseOnlist(element.index)} className="checkbuttonstyle">
-                                                <span className="glyphicon glyphicon-check" style={{ display: 'inline'}} ></span>
-                                            </button>
-                                        }
-                                        { !element.onList && 
-                                            <button onClick={()=> this.props.trueOnlist(element.index)} className="checkbuttonstyle">
-                                                <span className="glyphicon glyphicon-unchecked" style={{ display: 'inline'}} ></span>
-                                            </button>
-                                        }
-                                        <div className="text-left" > 
-                                            { 
-                                                element.time.map((time) => {
-                                                    return(
-                                                        <div>
-                                                            <div style={{ display: 'inline', padding: '0 10px 0 25%'}} >{ this.day(time.day) }</div>
 
-                                                            { this.time(time.start)} - { this.time(time.end) }
-                                                        </div>
-                                                    )}
-                                                ) 
-                                            } 
+                    <div className="input-group" >
+                        <span className="input-group-addon"><i className="glyphicon glyphicon-tag"></i></span>
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            ref="courseNo" 
+                            placeholder="Course NO. : 88888888" 
+                            value={this.state.courseNo} 
+                            onChange={() => this.onCourseNoChange()} 
+                        />
+                    </div>
+
+                    <div className="input-group">
+                        <span className="input-group-addon"><i className="glyphicon glyphicon-book"></i></span>
+                        <input 
+                            type="text" 
+                            className="form-control"
+                            ref="name" 
+                            placeholder="Course Name : Gen Phy II" 
+                            value={this.state.name} onChange={() => this.onNameChange()} 
+                        />
+                    </div>
+                    <div className="blackline" style={{ marginTop: '30px', marginBottom: '20px'}} />
+
+                    <div className="col-sm-12" style={{ overflow: 'scroll', height: '100%' }}>    
+                        <div className="resultstyle">
+                            ( Result : {this.state.searchResult.length} { this.state.searchResult.length >= 2 ? 'classes )' : 'class )' }
+                        </div>
+                        <ul className="list-group">
+                            { 
+                                this.state.searchResult.map((element) => { 
+                                    return (
+                                        <div className="list-group-item" onClick={() => this.showOnTable()}>
+                                            <div className="courseNostyle" > { element.courseNo } </div>
+                                            <div className="namestyle" > { element.name } </div>
+                                            { element.onList && 
+                                                <button onClick={()=> this.props.falseOnlist(element.index)} className="checkbuttonstyle">
+                                                    <span className="glyphicon glyphicon-check" style={{ display: 'inline'}} ></span>
+                                                </button>
+                                            }
+                                            { !element.onList && 
+                                                <button onClick={()=> this.props.trueOnlist(element.index)} className="checkbuttonstyle">
+                                                    <span className="glyphicon glyphicon-unchecked" style={{ display: 'inline'}} ></span>
+                                                </button>
+                                            }
+                                            <div className="text-left" > 
+                                                { 
+                                                    element.time.map((time) => {
+                                                        return(
+                                                            <div>
+                                                                <div style={{ display: 'inline', padding: '0 10px 0 25%'}} >{ this.day(time.day) }</div>
+
+                                                                { this.time(time.start)} - { this.time(time.end) }
+                                                            </div>
+                                                        )}
+                                                    ) 
+                                                } 
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
-                            )
-                        }
-                    </ul>
+                                    )}
+                                )
+                            }
+                        </ul>
+                    </div>
                 </div>
-                    
+            </div>
+            <div className="col-xs-6">
+                <div style={{ fontSize: '24px', textDecoration: 'underline' }}>Selected Courses </div>
+                <div style={{ width : '100%', marginTop: '20px'}} >
+                    {
+                        this.props.subject.map((element) => {
+                            return(
+                                <div>
+                                    { element.onList==false ? '' :
+                                        <div className="row" style={{border: '1px solid lightgray', padding: '10px', margin: '5px'}}>
+                                            <div className="courseNostyle" > { element.courseNo } </div>
+                                            <div className="namestyle" > { element.name } </div>
+                                            <button onClick={()=> this.props.falseOnlist(element.index)} style={{ float: 'right' }}>
+                                                <span className="glyphicon glyphicon-remove" ></span>
+                                            </button>
+                                        </div> 
+                                    }
+                                </div>
+                                
+                            )}
+                        )
+                    }
+                </div>
             </div>
         </div>
     );
