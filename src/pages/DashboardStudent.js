@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
 import '../style/dashboard.css';
 
+import {Card, CardActions, CardHeader, CardMedia, CardText, CardTitle} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
+import React, { Component } from 'react';
+
 import ActionDescription from 'material-ui/svg-icons/action/description';
+import ActionPayment from 'material-ui/svg-icons/action/payment';
 import ActionSchedule from 'material-ui/svg-icons/action/schedule';
 import ActionToc from 'material-ui/svg-icons/action/toc';
-import SocialSchool from 'material-ui/svg-icons/social/school';
-import ActionPayment from 'material-ui/svg-icons/action/payment';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import Grade from '../container/grade';
 import HomePage from './HomePage';
+import Request from '../container/request';
 import SearchPanel from '../container/search_panel';
+import SocialSchool from 'material-ui/svg-icons/social/school';
 import Table from '../container/table';
 
 class DashboardStudent extends Component {
@@ -257,8 +260,10 @@ class DashboardStudent extends Component {
             <Card>
                 <CardTitle title={this.state.selectedPage.name} subtitle={this.state.selectedPage.detail} />
                 <CardText style={{ height: '80vh', width: '100%' }}>
-                    {this.state.selectedPage.name === 'Course' && <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} /> }
-                    {this.state.selectedPage.name === 'Schedule' && <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable}/>     }
+                    {this.state.selectedPage.name === 'Course' && <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />}
+                    {this.state.selectedPage.name === 'Schedule' && <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable} />}
+                    {this.state.selectedPage.name === 'Grade' && <Grade subject={this.state.subject} />}
+                    {this.state.selectedPage.name === 'Request' && <Request subject={this.state.subject} />}
                 </CardText>
              </Card>
         </div>
