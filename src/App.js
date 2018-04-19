@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ overflow: 'hidden', height: '100%' }}>
+      <div style={{ overflow: 'hidden', height: '80%' }}>
         <NavBar logOut={this.logOut} />
         {this.state.page === 'login' && <LoginPage changePage={this.changePage} />}
         {this.state.page === 'studentDashboard' && <DashboardStudent />}

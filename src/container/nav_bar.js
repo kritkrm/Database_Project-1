@@ -6,7 +6,7 @@ class NavBar extends Component {
     };
   render() {
     return (
-        <nav className="navbar navbar-inverse" role="navigation" style={{ padding: '0px', height: '50px' }}>
+        <nav className="navbar navbar-inverse" role="navigation" style={{ padding: '0px', width: '100%', height: '5vh', position: 'absolute' }}>
             <div href="#" className="navbar-left" style={{fontSize: '20px', color: 'gray', paddingLeft: '10px', paddingTop: '12px'}}>
                 PREREGIS
             </div>
