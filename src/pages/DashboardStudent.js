@@ -11,6 +11,7 @@ import ActionToc from 'material-ui/svg-icons/action/toc';
 import Grade from '../container/grade';
 import HomePage from './HomePage';
 import Request from '../container/request';
+import Payment from '../container/payment';
 import SearchPanel from '../container/search_panel';
 import SocialSchool from 'material-ui/svg-icons/social/school';
 import Table from '../container/table';
@@ -245,8 +246,8 @@ class DashboardStudent extends Component {
 
   render() {
     return (
-      <div className="row" style={{ height: '100vh', fontSize: '24px' }}>
-        <div className="col-md-3 sidenav" style={{ height: '100vh', paddingLeft: '32px' }}>
+      <div className="row" style={{ height: '80%', fontSize: '24px', marginTop: '50px' }}>
+        <div className="col-md-3 sidenav" style={{ height: '94vh', paddingLeft: '32px' }}>
             <div style={{ width: '100%', textAlign: 'center', paddingTop: '48px', paddingBottom: '32px' }}>Student Menu</div>
             <List>
                 <ListItem primaryText="Schedule" leftIcon={<ActionSchedule />} onClick={() => this.changePage(0)} />
@@ -259,12 +260,22 @@ class DashboardStudent extends Component {
         <div className="col-md-9" style={{ paddingTop: '16px', paddingRight: '32px' }}>
             <Card>
                 <CardTitle title={this.state.selectedPage.name} subtitle={this.state.selectedPage.detail} />
-                <CardText style={{ height: '80vh', width: '100%' }}>
-                    {this.state.selectedPage.name === 'Course' && <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />}
-                    {this.state.selectedPage.name === 'Schedule' && <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable} />}
-                    {this.state.selectedPage.name === 'Grade' && <Grade subject={this.state.subject} />}
-                    {this.state.selectedPage.name === 'Request' && <Request subject={this.state.subject} />}
-                </CardText>
+                {
+                  this.state.selectedPage.name === 'Payment' ? 
+                  <CardText style={{ width: '100%' }}>
+                    <div className="row">
+                      {this.state.selectedPage.name === 'Payment' && <Payment />}
+                    </div>
+                  </CardText>
+                  :
+                  <CardText style={{ height: '78vh', width: '100%' }}>
+                      {this.state.selectedPage.name === 'Course' && <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />}
+                      {this.state.selectedPage.name === 'Schedule' && <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable} />}
+                      {this.state.selectedPage.name === 'Grade' && <Grade subject={this.state.subject} />}
+                      {this.state.selectedPage.name === 'Request' && <Request />}
+                  </CardText>
+                }
+                
              </Card>
         </div>
       </div>

@@ -30,7 +30,7 @@ class Request extends Component {
     
   render() {
     return (
-        <div className="col-xs-12">
+        <div className="col-xs-12" style={{ overflow: 'scroll', height: '100%' }}>
             <Divider />
             <div style={{ fontSize: '32px', marginBottom: '24px', marginTop: '16px' }}>Request Form</div>
             <RadioButtonGroup name="shipSpeed" defaultSelected="not_light" style={{ paddingLeft: '16px' }}>

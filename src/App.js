@@ -8,10 +8,21 @@ import NavBar from './container/nav_bar';
 class App extends Component {
   
   state = {
-    page: 'login',
+    page: 'studentDashboard',
     // page: 'studentDashboard',
     // page: 'teacherDashboard',
+    id: -1,
+    type: ""
   };
+
+  changeID = (nid) => {
+    this.setState({id:nid})
+  }
+
+  changeType= (ntype) => {
+    this.setState({type:ntype})
+  }
+
   logOut = () => {
     this.setState({ page: 'login' });
   }
@@ -25,11 +36,11 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ overflow: 'hidden', height: '100%' }}>
+      <div style={{ overflow: 'hidden', height: '80%' }}>
         <NavBar logOut={this.logOut} />
-        {this.state.page === 'login' && <LoginPage changePage={this.changePage} />}
-        {this.state.page === 'studentDashboard' && <DashboardStudent />}
-        {this.state.page === 'teacherDashboard' && <DashboardTeacher />}
+        {this.state.page === 'login' && <LoginPage changePage={this.changePage} changeID = {this.changeID} changeType = {this.changeType}/>}
+        {this.state.page === 'studentDashboard' && <DashboardStudent id = {this.state.id}/>}
+        {this.state.page === 'teacherDashboard' && <DashboardTeacher id = {this.state.id}/>}
       </div>
     );
   }

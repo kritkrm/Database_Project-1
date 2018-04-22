@@ -1,7 +1,7 @@
 
 /*====== Start SigIn ======*/
 .signin-container {
-    background-color: #5FCC9C;
+    background-color: white;
     margin: 0;
     height: 100vh;
     padding: 0;
@@ -109,15 +109,13 @@
     display: block;
     border-radius:5px;
     border: none;
-    background-color: #58c791;
+    background-color: #555555;
     color:#fff;
     font-size: 23px;
     padding: 0;
-    box-shadow: 0 5px 0 #3aad73;
 }
 .signup button:hover{
-    top: 2px;
-    box-shadow: 0 3px 0 #3aad73;
+    
     cursor: pointer;
 }
 .signup button:active{

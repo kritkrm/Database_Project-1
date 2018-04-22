@@ -20,6 +20,9 @@ class Grade extends Component {
         return counter;
     }
   render() {
+      const { onReduce } = this.props || {};
+      let styleReduce = onReduce === undefined ? false : onReduce;
+      console.log(onReduce, styleReduce)
     return (
         <div className="col-xs-12" style={{ overflow: 'scroll', height: '100%' }}>
             {
@@ -27,15 +30,15 @@ class Grade extends Component {
                 ['1/2560', '2/2560', '1/2561'].map((sem) => {
                     return (
                         <div style={{ widht: '100%' }}>
-                            <div style={{ fontSize: '32px' }}>{sem}</div>
+                            <div style={{ fontSize: styleReduce ? '20px' : '32px' }}>{sem}</div>
                             <Divider />
-                            <div  style={{ paddingRight: '15%', paddingLeft: '15%', width: '100%', marginBottom: '32px' }}>
+                            <div  style={{ width: '100%', marginBottom: '32px' }}>
                                 <Table>
                                     <TableHeader displaySelectAll={false}>
                                         <TableRow>
-                                            <TableHeaderColumn style={{ fontSize: titleFontSize, width: '10%' }}></TableHeaderColumn>
-                                            <TableHeaderColumn style={{ fontSize: titleFontSize, width: '60%' }}>Course</TableHeaderColumn>
-                                            <TableHeaderColumn style={{ fontSize: titleFontSize, width: '30%' }}>Grade</TableHeaderColumn>
+                                            <TableHeaderColumn style={{ fontSize: styleReduce ? '16px' : titleFontSize, width: '10%' }}></TableHeaderColumn>
+                                            <TableHeaderColumn style={{ fontSize: styleReduce ? '16px' :  titleFontSize, width: '60%' }}>Course</TableHeaderColumn>
+                                            <TableHeaderColumn style={{ fontSize: styleReduce ? '16px' :  titleFontSize, width: '30%' }}>Grade</TableHeaderColumn>
                                         </TableRow>
                                     </TableHeader>
                                     <TableBody displayRowCheckbox={false}>
@@ -44,18 +47,18 @@ class Grade extends Component {
                                                 if (element.onList == true) {
                                                     return (
                                                         <TableRow>
-                                                            <TableRowColumn style={{ fontSize: contentFontSize, width: '20%' }}>{element.courseNo}</TableRowColumn>
-                                                            <TableRowColumn style={{ fontSize: contentFontSize, width: '50%' }}>{element.name}</TableRowColumn>
-                                                            <TableRowColumn style={{ fontSize: contentFontSize, width: '30%' }}>{grades[index % 8]}</TableRowColumn>
+                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '20%' }}>{element.courseNo}</TableRowColumn>
+                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '50%' }}>{element.name}</TableRowColumn>
+                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '30%' }}>{grades[index % 8]}</TableRowColumn>
                                                         </TableRow>
                                                     )
                                                 }
                                             })
                                         }
                                         <TableRow>
-                                            <TableRowColumn style={{ fontSize: contentFontSize, width: '2%'  }}></TableRowColumn>
-                                            <TableRowColumn style={{ fontSize: contentFontSize, width: '49%'  }}>GPA: </TableRowColumn>
-                                            <TableRowColumn style={{ fontSize: contentFontSize, width: '49%'  }}>GPAX: </TableRowColumn>
+                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '2%'  }}></TableRowColumn>
+                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '49%'  }}>GPA: </TableRowColumn>
+                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '49%'  }}>GPAX: </TableRowColumn>
                                         </TableRow>
                                     </TableBody>
                                 </Table>
