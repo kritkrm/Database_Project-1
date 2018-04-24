@@ -8,11 +8,7 @@ import NavBar from './container/nav_bar';
 class App extends Component {
   
   state = {
-<<<<<<< HEAD
-    page: 'teacherDashboard',
-=======
     page: 'studentDashboard',
->>>>>>> 98c0cd5b07d453e0bc5c4c35f09243c12573dc03
     // page: 'studentDashboard',
     // page: 'teacherDashboard',
     id: -1,
