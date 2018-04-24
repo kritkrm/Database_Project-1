@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
+import RaisedButton from 'material-ui/RaisedButton';
 // {course_id: "2111211", year: "2015", semester: "1", section_id: "1", student_id: "5831057021", grade: "4.00"}
+const styles = {
+    block: {
+        maxWidth: 250,
+    },
+    radioButton: {
+        marginBottom: 16,
+    },
+    button: {
+        margin: 12,
+        marginBottom: 32,
+    },
+  };
+
 class ShowList extends Component {
 
     state = {
@@ -10,9 +24,16 @@ class ShowList extends Component {
         dataSectionID: ['1', '2', '3', '33'],
         dataStudentID: ['5830622421', '58311111'],
         dataGrade: [],
+        courseId: '',
+        year: '',
+        semester: '',
+        grade: '',
+        section: '',
+        studentId: '',
       };
     
       handleUpdateInput = (value) => {
+          this.setState(value);
       };
     
       render() {
@@ -23,7 +44,8 @@ class ShowList extends Component {
                 <AutoComplete
                 hintText="ex. 2110101"
                 dataSource={this.state.dataCourseID}
-                onUpdateInput={this.handleUpdateInput}
+                onUpdateInput={(value) => this.handleUpdateInput({ ...this.state, courseId: value })}
+                value={this.state.courseId}
                 style={{ marginLeft: '16px' }}
                 />
             </div>
@@ -32,7 +54,8 @@ class ShowList extends Component {
                 <AutoComplete
                 hintText="ex. 2016"
                 dataSource={this.state.dataYear}
-                onUpdateInput={this.handleUpdateInput}
+                onUpdateInput={(value) => this.handleUpdateInput({ ...this.state, year: value })}
+                value={this.state.year}
                 style={{ marginLeft: '16px' }}
                 />
             </div>
@@ -41,7 +64,8 @@ class ShowList extends Component {
                 <AutoComplete
                 hintText="ex. 1"
                 dataSource={this.state.dataSemester}
-                onUpdateInput={this.handleUpdateInput}
+                onUpdateInput={(value) => this.handleUpdateInput({ ...this.state, semester: value })}
+                value={this.state.semester}
                 style={{ marginLeft: '16px' }}
                 />
             </div>
@@ -50,7 +74,8 @@ class ShowList extends Component {
                 <AutoComplete
                 hintText="ex. 33"
                 dataSource={this.state.dataSectionID}
-                onUpdateInput={this.handleUpdateInput}
+                onUpdateInput={(value) => this.handleUpdateInput({ ...this.state, section: value })}
+                value={this.state.section}
                 style={{ marginLeft: '16px' }}
                 />
             </div>
@@ -59,7 +84,8 @@ class ShowList extends Component {
                 <AutoComplete
                 hintText="ex. 5830622421"
                 dataSource={this.state.dataStudentID}
-                onUpdateInput={this.handleUpdateInput}
+                onUpdateInput={(value) => this.handleUpdateInput({ ...this.state, studentId: value })}
+                value={this.state.studentId}
                 style={{ marginLeft: '16px' }}
                 />
             </div>
@@ -68,9 +94,13 @@ class ShowList extends Component {
                 <AutoComplete
                 hintText="ex. A"
                 dataSource={this.state.dataGrade}
-                onUpdateInput={this.handleUpdateInput}
+                onUpdateInput={(value) => this.handleUpdateInput({ ...this.state, grade: value })}
+                value={this.state.grade}
                 style={{ marginLeft: '16px' }}
                 />
+            </div>
+            <div className="row" style={{ marginLeft: '64px' }}>
+                <RaisedButton label="Submit" primary={true} style={styles.button} onClick={() => console.log(this.state)} />
             </div>
           </div>
         );

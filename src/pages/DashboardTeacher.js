@@ -243,12 +243,16 @@ class DashboardTeacher extends Component {
     })
   }
 
+  componentDidmount() {
+    //...
+  }
+
 
   render() {
     return (
       <div className="row" style={{ height: '80%', fontSize: '24px', marginTop: '50px' }}>
       <div className="col-md-3 sidenav" style={{ height: '94vh', paddingLeft: '32px' }}>
-          <div style={{ width: '100%', textAlign: 'center', paddingTop: '48px', paddingBottom: '32px' }}>Student Menu</div>
+          <div style={{ width: '100%', textAlign: 'center', paddingTop: '48px', paddingBottom: '32px' }}>Instructor Menu</div>
           <List>
                 <ListItem primaryText="Schedule" leftIcon={<ActionSchedule />} onClick={() => this.changePage(0)} />
                 <ListItem primaryText="Grade" leftIcon={<SocialSchool />} onClick={() => this.changePage(1)} />
