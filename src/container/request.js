@@ -27,30 +27,41 @@ const styles = {
 const titleFontSize = '18px';
 const contentFontSize = '18px';
 class Request extends Component {
-    
+    state = {
+        selectedValue: null,
+    };
+
+    onSubmit = () => {
+        console.log(this.state.selectedValue)
+    }
+
   render() {
+      const { selectedValue } = this.state;
     return (
         <div className="col-xs-12" style={{ overflow: 'scroll', height: '100%' }}>
             <Divider />
             <div style={{ fontSize: '32px', marginBottom: '24px', marginTop: '16px' }}>Request Form</div>
-            <RadioButtonGroup name="shipSpeed" defaultSelected="not_light" style={{ paddingLeft: '16px' }}>
+            <RadioButtonGroup name="shipSpeed" valueSelected={selectedValue} defaultSelected="not_light" style={{ paddingLeft: '16px' }}>
                 <RadioButton
-                    value="transcript"
+                    value={'transcript'}
                     label="Transcript"
                     style={styles.radioButton}
+                    onClick={() => this.setState({ selectedValue: 'transcript' })}
                 />
                 <RadioButton
-                    value="ใบรับรอง"
+                    value={'bai'}
                     label="ใบรับรอง"
                     style={styles.radioButton}
+                    onClick={() => this.setState({ selectedValue: 'bai' })}
                 />
                 <RadioButton
-                    value="graduation"
+                    value={'graduation'}
                     label="Graduation"
                     style={styles.radioButton}
+                    onClick={() => this.setState({ selectedValue: 'graduation' })}
                 />
             </RadioButtonGroup>
-            <RaisedButton label="Send Request" primary={true} style={styles.button} />
+            <RaisedButton label="Send Request" primary={true} style={styles.button} onClick={this.onSubmit} />
             <Divider />
             <div style={{ fontSize: '32px', marginBottom: '16px', marginTop: '64px'  }}>Request History</div>
             <div style={{ paddingRight: '64px', width: '100%', paddingLeft: '64px' }}>
