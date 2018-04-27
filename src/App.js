@@ -8,7 +8,7 @@ import NavBar from './container/nav_bar';
 class App extends Component {
   
   state = {
-    page: 'studentDashboard',
+    page: 'login',
     // page: 'studentDashboard',
     // page: 'teacherDashboard',
     id: -1,
@@ -16,7 +16,7 @@ class App extends Component {
   };
 
   changeID = (nid) => {
-    this.setState({id:nid})
+    this.setState({id:nid}) 
   }
 
   changeType= (ntype) => {

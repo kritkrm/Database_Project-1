@@ -25,18 +25,21 @@ class LoginPage extends Component {
     handleSubmit = (event) => {
         console.log( this.state.username ) ;
         if( this.state.type == "instructor" ) {
-            console.log("inst sub");
+            // console.log("INSTRUCTOR LOGIN SUBMIT");
+            console.log(this.state.type);
             axios.post('http://127.0.0.1:3000' + '/auth/instructor', {
                 instructor_id : this.state.username,
                 password : this.state.password
+            },{
+                withCredentials: true,
             }).then(function (response) {
                 if( Object.keys(response.data).length === 0 ){
-                    console.log("fuck")
+                    console.log('LOGIN as INSTRUCTOR FAIL ');
                 } else { 
                     console.log( response.data );
-                    console.log('LOGIN INST SUCCESS');
+                    console.log('LOGIN as INSTRUCTOR OK ');
                     this.props.changePage('teacherDashboard')
-                    this.props.changeID(response.data.instructor_id);
+                    this.props.changeID(response.data.user.instructor_id);
                     this.props.changeType("instructor")
                 }
             }.bind(this)).catch(function (err) {
@@ -44,19 +47,25 @@ class LoginPage extends Component {
             });
 
         } else {
-            // console.log("student sub");
-            // axios.post('http://127.0.0.1:3000' + '/auth/student', {
-            //     instructor_id : this.state.username,
-            //     password : this.state.password
-            // }).then(function (response) {
-            //     console.log( response );
-            //     console.log('LOGIN INST SUCCESS');
-            //     this.props.changePage('studentDashboard')
-            //     // this.props.changeID('')
-            //     this.props.changeType("student")
-            // }).catch(function (err) {
-            //     console.error(err);
-            // });
+           // console.log("STUDENT LOGIN SUBMIT");
+            console.log(this.state.type);
+            axios.post('http://127.0.0.1:3000/auth/student', {
+                student_id : this.state.username,
+                password : this.state.password
+            }).then(function (response) {
+                if( Object.keys(response.data).length === 0 ){
+                    console.log('LOGIN as STUDENT FAIL ');
+                } else { 
+                    console.log( response.data );
+                    console.log('LOGIN as STUDENT OK ');
+                    this.props.changePage('studentDashboard')
+                    this.props.changeID(response.data.user.student_id);
+                    this.props.changeType("student")
+                    
+                }
+            }.bind(this)).catch(function (err) {
+                 console.error(err);
+            });
         }
 
     }       

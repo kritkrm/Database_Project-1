@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../style/dashboard.css';
 
+import axios from 'axios' ;
 import {List, ListItem} from 'material-ui/List';
 import ActionDescription from 'material-ui/svg-icons/action/description';
 import ActionSchedule from 'material-ui/svg-icons/action/schedule';
@@ -64,6 +65,41 @@ class DashboardTeacher extends Component {
     });
     this.createClass();
   }
+
+  componentDidMount () {
+    // axios.get('http://localhost:3000/auth/check', {
+    //   withCredentials: true,
+    // }).then(function (response) {
+    //   console.log("CHECK WHOAMI OK");
+    //   console.log(response.data) ;
+    // }.bind(this)).catch(function (err) {
+    //   console.error(err);
+    //   console.log("fail");
+    // });
+
+    // axios.get('http://127.0.0.1:3000' + '/auth/check', {
+    // }).then(function (response) {
+    //   console.log("CHECK WHOAMI OK");
+    //   console.log(response.data) ;
+    // }.bind(this)).catch(function (err) {
+    //   console.error(err);
+    //   console.log("fail");
+    // });
+
+    // axios.get('http://127.0.0.1:3000' + '/instructor/course/all', {
+    // }).then(function (response) {
+    //   // console.log("FETCH TEACHED COURSE : ")
+    //   console.log(response.data);
+    //   // if( Object.keys(response.data).length === 0 ){
+    //   // } else { 
+      
+      
+    // }.bind(this)).catch(function (err) {
+    //   console.error(err);
+    //   console.log("fail")
+    // });
+
+    }
 
   falseOnlist = (index) => {
     let copySubject = this.state.subject;
