@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import '../style/loginStyle.css';
 import axios from 'axios';
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 
 class LoginPage extends Component {
+
+    static propTypes = {
+        cookies: instanceOf(Cookies).isRequired
+    };
+    cookies = this.props.cookies;
 
     backend = 'http://127.0.0.1:3000' ; 
 
@@ -13,6 +20,19 @@ class LoginPage extends Component {
         password: "",
         type: ""
     };
+
+    constructor(props) {
+        super(props);
+        let queryToken = '?token=' + this.cookies.get('token');
+        // let queryToken = '';
+        axios.get('http://127.0.0.1:3000' + '/auth/check' + queryToken).then(data => {
+            console.log(data.data);
+            if(data.data.type) {
+                if (data.data.type === 'instructor') props.changePage('teacherDashboard');
+                else if (data.data.type === 'student') props.changePage('studentDashboard');
+            }
+        });
+    }
 
     handleUserNameChange = (event) => {
         this.setState({ username: event.target.value });
@@ -23,6 +43,7 @@ class LoginPage extends Component {
 
 
     handleSubmit = (event) => {
+
         console.log( this.state.username ) ;
         if( this.state.type == "instructor" ) {
             console.log("inst sub");
@@ -37,7 +58,8 @@ class LoginPage extends Component {
                     console.log('LOGIN INST SUCCESS');
                     this.props.changePage('teacherDashboard')
                     this.props.changeID(response.data.instructor_id);
-                    this.props.changeType("instructor")
+                    this.props.changeType("instructor");
+                    this.cookies.set('token', response.data.token);
                 }
             }.bind(this)).catch(function (err) {
                  console.error(err);
@@ -105,4 +127,4 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+export default withCookies(LoginPage);

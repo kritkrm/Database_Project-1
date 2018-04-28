@@ -4,15 +4,22 @@ import LoginPage from './pages/LoginPage';
 import DashboardStudent from './pages/DashboardStudent';
 import DashboardTeacher from './pages/DashboardTeacher';
 import NavBar from './container/nav_bar';
+import axios from 'axios';
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
 
 class App extends Component {
+
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
   
   state = {
-    page: 'studentDashboard',
+    page: 'login',
     // page: 'studentDashboard',
     // page: 'teacherDashboard',
     id: -1,
-    type: ""
+    type: "",
   };
 
   changeID = (nid) => {
@@ -24,26 +31,27 @@ class App extends Component {
   }
 
   logOut = () => {
-    this.setState({ page: 'login' });
+    const { cookies } = this.props;
+    let queryToken = '?token=' + cookies.get('token');
+    axios.post('http://127.0.0.1:3000' + '/auth/logout' + queryToken, {}).then(data => {
+      cookies.remove('token');
+      this.setState({ page: 'login' });
+    });
   }
   changePage = (pageName) => {
     this.setState({ page: pageName });
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     return (
-      <div style={{ overflow: 'hidden', height: '80%' }}>
-        <NavBar logOut={this.logOut} />
-        {this.state.page === 'login' && <LoginPage changePage={this.changePage} changeID = {this.changeID} changeType = {this.changeType}/>}
-        {this.state.page === 'studentDashboard' && <DashboardStudent id = {this.state.id}/>}
-        {this.state.page === 'teacherDashboard' && <DashboardTeacher id = {this.state.id}/>}
-      </div>
+        <div style={{ overflow: 'hidden', height: '80%' }}>
+          <NavBar logOut={this.logOut} />
+          {this.state.page === 'login' && <LoginPage changePage={this.changePage} changeID = {this.changeID} changeType = {this.changeType}/>}
+          {this.state.page === 'studentDashboard' && <DashboardStudent id = {this.state.id}/>}
+          {this.state.page === 'teacherDashboard' && <DashboardTeacher id = {this.state.id}/>}
+        </div>
     );
   }
 }
 
-export default App;
+export default withCookies(App);
