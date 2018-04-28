@@ -3,6 +3,7 @@ import '../style/dashboard.css';
 import {Card, CardActions, CardHeader, CardMedia, CardText, CardTitle} from 'material-ui/Card';
 import {List, ListItem} from 'material-ui/List';
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import Cookies from 'universal-cookie';
 
@@ -151,7 +152,8 @@ class DashboardStudent extends Component {
         index: 13,
         onList: false,
       },
-    ]
+    ],
+    allSubjects: [],
   };
 
   trueOnlist = (index) => {
@@ -248,7 +250,52 @@ class DashboardStudent extends Component {
     })
   }
 
+  componentDidMount() {
+    let subjects = [];
+    axios.get('http://localhost:3000/course/all').then(res => {
+      console.log(res.data);
+      let courses = res.data.courses;
+      let subjects = [];
+      courses.map((course, index) => {
+        let subject = {
+          courseNo: course.course_id,
+          name: course.name,
+          time: [],
+          index: index,
+          onList: false,
+        };
+
+        course.sections.map(section => {
+          section.time_slots.map(slot => {
+            let starts = slot.start_time.split(':');
+            let ends = slot.end_time.split(':');
+            let day = -1;
+            if (slot.day === 'monday') day = 1;
+            else if (slot.day === 'tuesday') day = 2;
+            else if (slot.day === 'wednesday') day = 3;
+            else if (slot.day === 'thursday') day = 4;
+            else if (slot.day === 'friday') day = 5;
+            subject.time.push({
+              start: parseInt(starts[0]) * 100 + parseInt(starts[1]),
+              end: parseInt(ends[0]) * 100 + parseInt(ends[1]),
+              day: day,
+            });
+          });
+        });
+
+        subjects.push(subject);
+      });
+      this.setState({ allSubjects: subjects });
+      this.createClass();
+    });
+
+    this.setState({
+      allSubjects: subjects
+    });
+  }
+
   render() {
+    console.log(this.state.selectedPage)
     return (
       <div className="row" style={{ height: '80%', fontSize: '24px', marginTop: '50px' }}>
         <div className="col-md-3 sidenav" style={{ height: '94vh', paddingLeft: '32px' }}>
@@ -273,7 +320,7 @@ class DashboardStudent extends Component {
                   </CardText>
                   :
                   <CardText style={{ height: '78vh', width: '100%' }}>
-                      {this.state.selectedPage.name === 'Course' && <SearchPanel subject={this.state.subject} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />}
+                      {this.state.selectedPage.name === 'Course' && <SearchPanel subject={this.state.allSubjects} trueOnlist={this.trueOnlist} falseOnlist={this.falseOnlist} />}
                       {this.state.selectedPage.name === 'Schedule' && <Table subject={this.state.subject} falseOnlist={this.falseOnlist} classOnTable={this.state.classOnTable} />}
                       {this.state.selectedPage.name === 'Grade' && <Grade subject={this.state.subject} />}
                       {this.state.selectedPage.name === 'Request' && <Request />}

@@ -45,8 +45,8 @@ class Grade extends Component {
                                                 sem.subjects.map((element, index) => {
                                                     return (
                                                         <TableRow key={index} >
-                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '20%' }}>{element.courseNo}</TableRowColumn>
-                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '50%' }}>{element.name}</TableRowColumn>
+                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '20%' }}>{element.course_id}</TableRowColumn>
+                                                            <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '50%' }}>{element.name} - {element.section_id}</TableRowColumn>
                                                             <TableRowColumn style={{ fontSize: styleReduce ? '16px' :  contentFontSize, width: '30%' }}>{
                                                                 element.grade > 0 ? grades[parseInt((4 - element.grade) / 0.5)] : element.grade
                                                             }</TableRowColumn>
