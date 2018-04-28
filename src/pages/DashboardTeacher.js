@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../style/dashboard.css';
 
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
+
 import {List, ListItem} from 'material-ui/List';
 import ActionDescription from 'material-ui/svg-icons/action/description';
 import ActionSchedule from 'material-ui/svg-icons/action/schedule';
@@ -17,6 +20,11 @@ import SearchPanel from '../container/search_panel';
 import Table from '../container/table';
 
 class DashboardTeacher extends Component {
+  
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+  cookies = this.props.cookies;
     
   state = {
     pages: [
@@ -284,4 +292,4 @@ class DashboardTeacher extends Component {
   }
 }
 
-export default DashboardTeacher;
+export default withCookies(DashboardTeacher);

@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 
+import { instanceOf } from 'prop-types';
+import { withCookies, Cookies } from 'react-cookie';
+
 import Footer from '../container/footer';
 import Header from '../container/header';
 import SearchPanel from '../container/search_panel';
 import Table from '../container/table';
 
 class HomePage extends Component {
+
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
+  cookies = this.props.cookies;
+
   constructor(props){
     super(props);
     this.state = {
@@ -242,4 +251,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default withCookies(HomePage);
