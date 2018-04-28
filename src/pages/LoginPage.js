@@ -62,19 +62,28 @@ class LoginPage extends Component {
             });
 
         } else {
-            // console.log("student sub");
-            // axios.post('http://127.0.0.1:3000' + '/auth/student', {
-            //     instructor_id : this.state.username,
-            //     password : this.state.password
-            // }).then(function (response) {
-            //     console.log( response );
-            //     console.log('LOGIN INST SUCCESS');
-            //     this.props.changePage('studentDashboard')
-            //     // this.props.changeID('')
-            //     this.props.changeType("student")
-            // }).catch(function (err) {
-            //     console.error(err);
-            // });
+            console.log("student sub");
+            axios.post('http://127.0.0.1:3000' + '/auth/student', {
+                student_id : this.state.username,
+                password : this.state.password
+            }).then(function (response) {
+                if( Object.keys(response.data).length === 0 ){
+                } else { 
+                    console.log( response.data );
+                    console.log('LOGIN STU SUCCESS');
+                    this.props.changePage('studentDashboard')
+                    this.props.changeID(response.data.student_id);
+                    this.props.changeType("student");
+                    this.cookies.set('token', response.data.token);
+                }
+                // console.log( response );
+                // console.log('LOGIN INST SUCCESS');
+                // this.props.changePage('studentDashboard')
+                // // this.props.changeID('')
+                // this.props.changeType("student")
+            }).catch(function (err) {
+                console.error(err);
+            });
         }
 
     }       
