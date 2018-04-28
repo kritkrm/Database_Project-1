@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import {List, ListItem, makeSelectable} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import Subheader from 'material-ui/Subheader';
+import axios from 'axios';
+import Cookies from 'universal-cookie';
 import Grade from './grade';
+
+const cookies = new Cookies();
 
 let SelectableList = makeSelectable(List);
 
@@ -41,35 +45,86 @@ function wrapState(ComposedComponent) {
 
 SelectableList = wrapState(SelectableList);
 
-const ListExampleSelectable = () => (
-    <div className="row" style={{ height: '100%' }}>
-    <div className="col-xs-4">
-    <SelectableList defaultValue={3}>
-      <Subheader>Student List</Subheader>
-      <ListItem
-        value={1}
-        primaryText="Net Phongpisit"
-      />
-      <ListItem
-        value={3}
-        primaryText="Burin Naowarat"
-      />
-      <ListItem
-        value={4}
-        primaryText="Manussawin Tepsus"
-      />
-      <ListItem
-        value={5}
-        primaryText="Aj.Chal U-nhai"
-      />
-    </SelectableList>
-    </div>
-    <div className="col-xs-8" style={{ overflow: 'scroll', height: '100%' }}>
-        <div style={{ overflow: 'scroll' }}>
-        <Grade subject={[{courseNo: '2110101', name: 'Python', onList: true}, {courseNo: '2110101', name: 'Python', onList: true}, {courseNo: '2110101', name: 'Python', onList: true}]} onReduce={true} />
-        </div>
-    </div>
-    </div>
-);
+export default class ListExampleSelectable extends Component {
 
-export default ListExampleSelectable;
+  state = {
+    students: [],
+    studentIndex: 0,
+  }
+
+  constructor(props) {
+    super(props);
+
+    axios.get('http://localhost:3000/instructor/advisees?token=' + cookies.get('token')).then(res => {
+
+      let students = [];
+      res.data.students.map(student => {
+        
+        student.semesters = [];
+        student.courses.map(course => {
+          
+          let sem = student.semesters.find(sem => sem.semester === course.semester && sem.year === course.year);
+          if(sem === undefined) {
+            sem = {
+              year: course.year,
+              semester: course.semester,
+              grade: 0,
+              credit: 0,
+              subjects: [],
+            }
+            student.semesters.push(sem);
+          }
+          sem.grade += course.grade * course.credit;
+          sem.credit += course.credit;
+          sem.subjects.push(course);
+        });
+
+        student.semesters.sort((A, B) => {
+          let a = '' + A.year + '' + A.semester;
+          let b = '' + B.year + '' + B.semester;
+          return a.localeCompare(b);
+        });
+        let gradeX = 0;
+        let creditX = 0;
+        student.semesters.map(sem => {
+          gradeX += sem.grade;
+          creditX += sem.credit;
+          sem.gradeX = gradeX;
+          sem.creditX = creditX;
+        });
+
+        students.push(student);
+      });
+
+      this.setState({students: students});
+    });
+  }
+
+  render = () => {
+    return (
+    <div className="row" style={{ height: '100%' }}>
+      <div className="col-xs-4">
+        <SelectableList defaultValue={0}>
+          <Subheader>Student List</Subheader>
+          {
+            this.state.students.map((student, index) => (
+              <ListItem
+                onClick={() => this.setState({studentIndex: index})}
+                value={index}
+                primaryText={student.name}
+              />
+            ))
+          }
+        </SelectableList>
+      </div>
+      <div className="col-xs-8" style={{ overflow: 'scroll', height: '100%' }}>
+        <div style={{ overflow: 'scroll' }}>
+        {
+          this.state.students.length &&
+          <Grade semesters={this.state.students[this.state.studentIndex].semesters} onReduce={true} />
+        }
+        </div>
+      </div>
+    </div>
+  )};
+}
