@@ -40,6 +40,8 @@ class LoginPage extends Component {
 
     handleSubmit = (event) => {
 
+        let that = this;
+
         console.log( this.state.username ) ;
         if( this.state.type == "instructor" ) {
             console.log("inst sub");
@@ -52,29 +54,39 @@ class LoginPage extends Component {
                 } else { 
                     console.log( response.data );
                     console.log('LOGIN INST SUCCESS');
-                    this.cookies.set('token', response.data.token);
-                    this.props.changePage('teacherDashboard')
-                    this.props.changeID(response.data.instructor_id);
-                    this.props.changeType("instructor");
+                    that.cookies.set('token', response.data.token);
+                    that.props.changePage('teacherDashboard')
+                    that.props.changeID(response.data.instructor_id);
+                    that.props.changeType("instructor");
                 }
             }.bind(this)).catch(function (err) {
                  console.error(err);
             });
 
         } else {
-            // console.log("student sub");
-            // axios.post('http://127.0.0.1:3000' + '/auth/student', {
-            //     instructor_id : this.state.username,
-            //     password : this.state.password
-            // }).then(function (response) {
-            //     console.log( response );
-            //     console.log('LOGIN INST SUCCESS');
-            //     this.props.changePage('studentDashboard')
-            //     // this.props.changeID('')
-            //     this.props.changeType("student")
-            // }).catch(function (err) {
-            //     console.error(err);
-            // });
+            console.log("student sub");
+            axios.post('http://127.0.0.1:3000' + '/auth/student', {
+                student_id : this.state.username,
+                password : this.state.password
+            }).then(function (response) {
+                if( Object.keys(response.data).length === 0 ){
+                } else { 
+                    console.log( response.data );
+                    console.log('LOGIN STU SUCCESS');
+                    that.cookies.set('token', response.data.token);
+                    that.props.changePage('studentDashboard')
+                    that.props.changeID(response.data.student_id);
+                    that.props.changeType("student");
+                    
+                }
+                // console.log( response );
+                // console.log('LOGIN INST SUCCESS');
+                // this.props.changePage('studentDashboard')
+                // // this.props.changeID('')
+                // this.props.changeType("student")
+            }).catch(function (err) {
+                console.error(err);
+            });
         }
 
     }       
