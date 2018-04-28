@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import '../style/loginStyle.css';
 import axios from 'axios';
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
+import Cookies from 'universal-cookie';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 
 class LoginPage extends Component {
 
-    static propTypes = {
-        cookies: instanceOf(Cookies).isRequired
-    };
-    cookies = this.props.cookies;
+    cookies = new Cookies();
 
     backend = 'http://127.0.0.1:3000' ; 
 
@@ -127,4 +123,4 @@ class LoginPage extends Component {
     }
 }
 
-export default withCookies(LoginPage);
+export default LoginPage;

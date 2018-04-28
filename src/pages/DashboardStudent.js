@@ -4,8 +4,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardText, CardTitle} from 'mat
 import {List, ListItem} from 'material-ui/List';
 import React, { Component } from 'react';
 
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
+import Cookies from 'universal-cookie';
 
 import ActionDescription from 'material-ui/svg-icons/action/description';
 import ActionPayment from 'material-ui/svg-icons/action/payment';
@@ -21,10 +20,7 @@ import Table from '../container/table';
 
 class DashboardStudent extends Component {
 
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
-  cookies = this.props.cookies;
+  cookies = new Cookies();
   
   state = {
     pages: [
@@ -291,4 +287,4 @@ class DashboardStudent extends Component {
   }
 }
 
-export default withCookies(DashboardStudent);
+export default DashboardStudent;

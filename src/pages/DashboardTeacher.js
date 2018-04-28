@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import '../style/dashboard.css';
 
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
+import Cookies from 'universal-cookie';
 
 import {List, ListItem} from 'material-ui/List';
 import ActionDescription from 'material-ui/svg-icons/action/description';
@@ -21,10 +20,7 @@ import Table from '../container/table';
 
 class DashboardTeacher extends Component {
   
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
-  cookies = this.props.cookies;
+  cookies = new Cookies();
     
   state = {
     pages: [
@@ -292,4 +288,4 @@ class DashboardTeacher extends Component {
   }
 }
 
-export default withCookies(DashboardTeacher);
+export default DashboardTeacher;
