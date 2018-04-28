@@ -5,6 +5,7 @@ import {List, ListItem} from 'material-ui/List';
 import React, { Component } from 'react';
 
 import Cookies from 'universal-cookie';
+import axios from 'axios';
 
 import ActionDescription from 'material-ui/svg-icons/action/description';
 import ActionPayment from 'material-ui/svg-icons/action/payment';
@@ -154,6 +155,34 @@ class DashboardStudent extends Component {
     ]
   };
 
+  componentDidMount() {
+    let queryToken = '?token=' + this.cookies.get('token');
+
+    axios.get('http://127.0.0.1:3000' + '/instructor/course/all' + queryToken, {
+    }).then(function (response) {
+      // console.log("FETCH TEACHED COURSE : ")
+      // console.log(response.data.courses[0]);
+      // console.log(Object.keys(response.data.courses).length);
+      var arr = [] ; 
+      for(var i = 0 ; i < Object.keys(response.data.courses).length ;i++){
+        // console.log(response.data.courses[i]);
+        var course = response.data.courses[i] ;
+        arr.push({
+          courseNo: course.course_id, 
+          name: course.name, 
+          time: [
+            { start: 1600, end: 1700, day: 5 }, 
+          ],
+          index: i,
+          onList: false,}) ;  
+      }
+      this.setState({subject:arr});
+    }.bind(this)).catch(function (err) {
+      console.error(err);
+      console.log("fail")
+    });
+
+  }
   trueOnlist = (index) => {
     let copySubject = this.state.subject[index];
     let copyAllSubject = this.state.subject;
