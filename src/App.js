@@ -5,14 +5,11 @@ import DashboardStudent from './pages/DashboardStudent';
 import DashboardTeacher from './pages/DashboardTeacher';
 import NavBar from './container/nav_bar';
 import axios from 'axios';
-import { instanceOf } from 'prop-types';
-import { withCookies, Cookies } from 'react-cookie';
+import Cookies from 'universal-cookie';
 
 class App extends Component {
 
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
+  cookies = new Cookies();
   
   state = {
     page: 'login',
@@ -31,10 +28,9 @@ class App extends Component {
   }
 
   logOut = () => {
-    const { cookies } = this.props;
-    let queryToken = '?token=' + cookies.get('token');
+    let queryToken = '?token=' + this.cookies.get('token');
     axios.post('http://127.0.0.1:3000' + '/auth/logout' + queryToken, {}).then(data => {
-      cookies.remove('token');
+      this.cookies.remove('token');
       this.setState({ page: 'login' });
     });
   }
@@ -54,4 +50,4 @@ class App extends Component {
   }
 }
 
-export default withCookies(App);
+export default App;
