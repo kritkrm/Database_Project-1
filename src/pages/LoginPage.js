@@ -52,10 +52,10 @@ class LoginPage extends Component {
                 } else { 
                     console.log( response.data );
                     console.log('LOGIN INST SUCCESS');
+                    this.cookies.set('token', response.data.token);
                     this.props.changePage('teacherDashboard')
                     this.props.changeID(response.data.instructor_id);
                     this.props.changeType("instructor");
-                    this.cookies.set('token', response.data.token);
                 }
             }.bind(this)).catch(function (err) {
                  console.error(err);
